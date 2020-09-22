@@ -130,6 +130,10 @@ body {
     background: #172C49;
     border-color: #172C49;
 }
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+    background: #172C49;
+    border-color: #172C49;
+}
 
 .btn-primary:hover, .btn-primary:focus {
     background: #ffffff;
@@ -141,7 +145,10 @@ body {
     background: #3BA935;
     border-color: #3BA935;
 }
-
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+    background: #3BA935;
+    border-color: #3BA935;
+}
 .btn-secondary:hover, .btn-secondary:focus {
     background: #ffffff;
     color: #3BA935;
