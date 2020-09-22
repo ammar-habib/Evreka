@@ -1,13 +1,185 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/***********
+ Basic style
+***********/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    /*background-color: #2D3E50;*/
+    background-image: linear-gradient(to right, #b2db9e 0%, #539fb7 100%);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 0.3px;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    /*display: flex;*/
+    /*-ms-flex-direction: row;*/
+    /*flex-direction: row;*/
+    min-height: 100vh;
+    /*background: #172C49;*/
+    color: #172C49;
+}
+
+.app-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 10px 14px 0;
+}
+
+.main {
+    display: flex;
+    align-items: stretch;
+}
+
+.pageContent {
+    padding: 20px 0 0 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.heading1 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.heading2 {
+    font-size: 21px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.heading3 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #172C49;
+}
+
+.color-primary1 {
+    color: #172C49;
+}
+
+.color-primary2 {
+    color: #535A72;
+
+}
+
+.color-primary3 {
+    color: #3BA935;
+}
+
+.color-primary4 {
+    color: #E9CF30;
+}
+
+.color-primary5 {
+    color: #EBECEF;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.customBtn {
+    text-align: center;
+    font: normal normal bold 16px/22px Open Sans;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px #00000029;
+}
+
+.btn-primary {
+    background: #172C49;
+    border-color: #172C49;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: #ffffff;
+    color: #172C49;
+    border-color: #172C49;
+}
+
+.btn-secondary {
+    background: #3BA935;
+    border-color: #3BA935;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background: #ffffff;
+    color: #3BA935;
+    border-color: #3BA935;
+}
+
+.eventListing__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px 10px;
+    grid-template-areas: ". . . . .";
+    padding: 15px 15px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    border-left: 6px solid transparent;
+}
+
+.eventListing__list.selected, .eventListing__list:hover {
+    background: #FBF5D6;
+}
+.customTabs {
+    border-bottom: 2px solid #8997B2;
+}
+
+.customTabs .nav-link {
+    font: normal normal bold 16px/18px Open Sans;
+    letter-spacing: 0px;
+    color: #454F63;
+    opacity: 0.2;
+    border-radius: 0;
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: transparent transparent transparent transparent;
+}
+.customTabs .nav-item.show .nav-link, .customTabs .nav-link.active {
+    color: #454F63;
+    opacity: 1;
+    background-color: #fff;
+    border-color: transparent transparent #3BA935 transparent;
 }
