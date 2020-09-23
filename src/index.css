@@ -124,13 +124,15 @@ body {
     text-transform: uppercase;
     border-radius: 4px;
     box-shadow: 0 3px 6px #00000029;
+    min-width: 124px;
 }
 
 .btn-primary {
     background: #172C49;
     border-color: #172C49;
 }
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
     background: #172C49;
     border-color: #172C49;
 }
@@ -145,10 +147,12 @@ body {
     background: #3BA935;
     border-color: #3BA935;
 }
-.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle {
     background: #3BA935;
     border-color: #3BA935;
 }
+
 .btn-secondary:hover, .btn-secondary:focus {
     background: #ffffff;
     color: #3BA935;
@@ -170,6 +174,7 @@ body {
 .eventListing__list.selected, .eventListing__list:hover {
     background: #FBF5D6;
 }
+
 .customTabs {
     border-bottom: 2px solid #8997B2;
 }
@@ -184,9 +189,80 @@ body {
     border-style: solid;
     border-color: transparent transparent transparent transparent;
 }
+
 .customTabs .nav-item.show .nav-link, .customTabs .nav-link.active {
     color: #454F63;
     opacity: 1;
     background-color: #fff;
     border-color: transparent transparent #3BA935 transparent;
+}
+
+.customTabs--action .nav-link {
+    font: normal normal bold 19px/26px Open Sans;
+    letter-spacing: 0;
+    color: #172C49;
+}
+
+.customTabs--action .nav-link:not(:last-child) {
+    margin-right: 2.5rem;
+}
+
+.actionListing {
+    margin-bottom: 30px;
+}
+
+.actionList {
+    background: #F4F4F4;
+    box-shadow: 0 3px 6px #00000029;
+    padding: 12.5px 20px;
+}
+
+.actionList:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.actionList p {
+    margin-bottom: 4px;
+}
+
+.actionList__text {
+    font: normal normal normal 14px/19px Open Sans;
+    letter-spacing: 0px;
+    color: #454F63;
+}
+
+.actionList:hover {
+    background: #454F63;
+    color: #ffffff;
+}
+
+.actionList:hover .actionList__text {
+    color: #ffffff;
+}
+
+.common-modal .modal-content {
+    box-shadow: 0 2px 6px #0000000F;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.common-modal .modal-header {
+    border-bottom: 0;
+    padding: 1rem 2rem 0;
+}
+
+.common-modal .modal-body {
+    padding: 0 2rem 1rem;
+}
+
+.common-modal .close {
+    opacity: 1;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+@media (min-width: 992px) {
+    .common-modal .modal-lg {
+        max-width: 795px;
+    }
 }

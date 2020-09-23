@@ -2,8 +2,15 @@ import React, {Component} from 'react';
 import {Container, Row, Col, Tabs, Tab, Form, Button} from "react-bootstrap";
 import './App.css';
 import EventList from "./component/common/event-list/event-list";
+import TakeAction from "./component/take-action/take-action";
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showActionModal: false,
+        };
+    }
     render() {
         return (
             <div className="page-wrapper">
@@ -24,7 +31,7 @@ class App extends Component {
                                             needed</Button>
                                     </Col>
                                     <Col xl="6" className="mb-3">
-                                        <Button className="customBtn" variant="secondary" block>take action</Button>
+                                        <Button className="customBtn" variant="secondary" block onClick={() => this.setState({showActionModal: true})}>take action</Button>
                                     </Col>
                                 </Form.Row>
                                 <Tabs defaultActiveKey="details" id="details-tab" className="customTabs mb-3">
@@ -52,6 +59,10 @@ class App extends Component {
                         </Col>
                     </Row>
                 </Container>
+                <TakeAction
+                    show= {this.state.showActionModal}
+                    hide ={() => this.setState({showActionModal: false})}
+                />
             </div>
         );
     }
