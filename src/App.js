@@ -1569,60 +1569,57 @@ class App extends Component {
                             {myData.data.map((items, i) => {
                                 console.log(items);
                                 {
-                                    items.map((item, i) => {
-                                        console.log(item);
-                                        return (
-                                            <div key={i} className="eventListing__list">
-                                                <div className="eventListing__text">
-                                                    <div><b>Date</b></div>
-                                                    <div>{item.media.url}</div>
-                                                </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Type</b></div>
-                                                    <div>{item.actions.title}</div>
-                                                </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Bin ID</b></div>
-                                                    <div><u>8720</u></div>
-                                                </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Temperature</b></div>
-                                                    <div>80c</div>
-                                                </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Action</b></div>
-                                                    <div>Mark As Resolved</div>
-                                                </div>
+                                    return (
+                                        <div key={i} className="eventListing__list" onClick={console.log(items)} >
+                                            <div className="eventListing__text">
+                                                <div><b>Date</b></div>
+                                                {items.details.map((detail, i) => {
+                                                    if (detail.format == "date") {
+                                                        return <div key={i}>
+                                                            <div>{detail.value}</div>
+                                                        </div>
+                                                    }
+
+                                                })}
                                             </div>
-                                        )
-                                    })
+                                            <div className="eventListing__text">
+                                                <div><b>Type</b></div>
+                                                {items.details.map((detail, i) => {
+                                                    if (detail.format == "incident_type") {
+                                                        return <div key={i}>
+                                                            <div>{detail.value}</div>
+                                                        </div>
+                                                    }
+
+                                                })}
+                                            </div>
+                                            <div className="eventListing__text">
+                                                <div><b>Event ID</b></div>
+                                                <div><u>{items.id}</u></div>
+                                            </div>
+                                            <div className="eventListing__text">
+                                                <div><b>Vehicle</b></div>
+                                                {items.details.map((detail, i) => {
+                                                    if (detail.format == "vehicle") {
+                                                        return <div key={i}>
+                                                            <div>{detail.value}</div>
+                                                        </div>
+                                                    }
+
+                                                })}
+                                            </div>
+                                            <div className="eventListing__text">
+                                                <div><b>Action</b></div>
+                                                {items.actions.map((action, i) => {
+                                                    return <div key={i}>
+                                                        <div>{action.action_taken}</div>
+                                                    </div>
+                                                })}
+                                            </div>
+                                        </div>
+                                    )
                                 }
                             })}
-                            <div className="eventListing">
-                                <div className="eventListing__list">
-                                    <div className="eventListing__text">
-                                        <div><b>Date</b></div>
-                                        <div>19.05.20 22:11</div>
-                                    </div>
-                                    <div className="eventListing__text">
-                                        <div><b>Type</b></div>
-                                        <div>Sudden Temperate increase</div>
-                                    </div>
-                                    <div className="eventListing__text">
-                                        <div><b>Bin ID</b></div>
-                                        <div><u>8720</u></div>
-                                    </div>
-                                    <div className="eventListing__text">
-                                        <div><b>Temperature</b></div>
-                                        <div>80c</div>
-                                    </div>
-                                    <div className="eventListing__text">
-                                        <div><b>Action</b></div>
-                                        <div>Mark As Resolved</div>
-                                    </div>
-                                </div>
-
-                            </div>
                         </Col>
                         <Col xl="4">
                             <h3 className="heading3 text-uppercase">Event details</h3>
