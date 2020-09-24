@@ -5,8 +5,8 @@ class Location extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            lat: 51.505,
-            lng: -0.09,
+            lat: this.props.lat,
+            lng: this.props.lng,
             zoom: 13
         }
     }
