@@ -36,7 +36,7 @@ body {
     /*-ms-flex-direction: row;*/
     /*flex-direction: row;*/
     min-height: 100vh;
-    /*background: #172C49;*/
+    background: #172C49;
     color: #172C49;
 }
 
@@ -57,19 +57,13 @@ body {
     flex-shrink: 0;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    padding: 10px 14px 0;
+    /*padding: 10px 14px 0;*/
 }
 
-.main {
-    display: flex;
-    align-items: stretch;
-}
-
-.pageContent {
-    padding: 20px 0 0 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
-    width: 100%;
+.page-content {
+    background: #EBECEF;
+    padding: 30px 15px 0;
+    margin-top: 40px;
 }
 
 .heading1 {
@@ -165,10 +159,14 @@ body {
     grid-template-rows: 1fr;
     gap: 10px 10px;
     grid-template-areas: ". . . . .";
-    padding: 15px 15px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 13px;
     border-left: 6px solid transparent;
+    background: #ffffff;
+    box-shadow: 0 3px 6px #00000029;
+    padding: 12.5px 20px;
+    margin-left: -15px;
+    cursor: pointer;
 }
 
 .eventListing__list.selected, .eventListing__list:hover {
@@ -181,7 +179,7 @@ body {
 
 .customTabs .nav-link {
     font: normal normal bold 16px/18px Open Sans;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     color: #454F63;
     opacity: 0.2;
     border-radius: 0;
@@ -227,7 +225,7 @@ body {
 
 .actionList__text {
     font: normal normal normal 14px/19px Open Sans;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     color: #454F63;
 }
 
@@ -260,6 +258,33 @@ body {
     font-weight: bold;
     font-size: 30px;
 }
+.imgDiv{
+    position: relative;
+    overflow: hidden;
+}
+.imgDiv__img{
+
+}
+@media  (min-width: 1920px) {
+    .container {
+        /*max-width: 1890px;*/
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+
+
 
 @media (min-width: 992px) {
     .common-modal .modal-lg {

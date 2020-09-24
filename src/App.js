@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col, Tabs, Tab, Form, Button} from "react-bootstrap";
+import {Container, Row, Col, Tabs, Tab, Form, Button, Alert} from "react-bootstrap";
 import './App.css';
 import EventList from "./component/common/event-list/event-list";
 import TakeAction from "./component/take-action/take-action";
@@ -1555,110 +1555,175 @@ class App extends Component {
         super(props);
         this.state = {
             showActionModal: false,
+            activeEvent: null,
+            activeEventDetail: false,
         };
     }
 
-    render() {
+    handleClick = id => {
+        this.setState({activeEvent: id});
+        myData.data.map((items, i) => {
+            if (items.id === id) {
+                this.setState({activeEventDetail: items}, () => {
+                    console.log(this.state.activeEventDetail);
+                });
+            }
 
+        })
+    };
+    mediaDetail = () => {
+        console.log(this.state.activeEventDetail);
+        //     this.state.activeEventDetail.media.map((item, i) => {
+        //         return (<div key={i}>
+        //                 {item.url}
+        //             </div>
+        //         )
+        //
+        //     })
+    };
+
+    render() {
         return (
             <div className="page-wrapper">
-                <Container fluid>
-                    <Row className="">
-                        <Col xl="8">
-                            <h3 className="heading3 text-uppercase">Events</h3>
-                            {myData.data.map((items, i) => {
-                                console.log(items);
-                                {
-                                    return (
-                                        <div key={i} className="eventListing__list" onClick={console.log(items)} >
-                                            <div className="eventListing__text">
-                                                <div><b>Date</b></div>
-                                                {items.details.map((detail, i) => {
-                                                    if (detail.format == "date") {
+                <Container>
+                    <div className="page-content">
+                        <Form.Row className="">
+                            <Col xl="8">
+                                <h3 className="heading3 text-uppercase">Events</h3>
+                                {myData.data.map((items, i) => {
+                                    {
+                                        return (
+                                            <div key={i}
+                                                 className={"eventListing__list " + (items.id === this.state.activeEvent ? 'selected' : ' ')}
+                                                 onClick={() => this.handleClick(items.id)}>
+                                                <div className="eventListing__text">
+                                                    <div><b>Date</b></div>
+                                                    {items.details.map((detail, i) => {
+                                                        if (detail.format == "date") {
+                                                            return <div key={i}>
+                                                                <div>{detail.value}</div>
+                                                            </div>
+                                                        }
+
+                                                    })}
+                                                </div>
+                                                <div className="eventListing__text">
+                                                    <div><b>Type</b></div>
+                                                    {items.details.map((detail, i) => {
+                                                        if (detail.format == "incident_type") {
+                                                            return <div key={i}>
+                                                                <div>{detail.value}</div>
+                                                            </div>
+                                                        }
+
+                                                    })}
+                                                </div>
+                                                <div className="eventListing__text">
+                                                    <div><b>Event ID</b></div>
+                                                    <div><u>{items.id}</u></div>
+                                                </div>
+                                                <div className="eventListing__text">
+                                                    <div><b>Vehicle</b></div>
+                                                    {items.details.map((detail, i) => {
+                                                        if (detail.format == "vehicle") {
+                                                            return <div key={i}>
+                                                                <div>{detail.value}</div>
+                                                            </div>
+                                                        }
+
+                                                    })}
+                                                </div>
+                                                <div className="eventListing__text">
+                                                    <div><b>Action</b></div>
+                                                    {items.actions.map((action, i) => {
                                                         return <div key={i}>
-                                                            <div>{detail.value}</div>
+                                                            <div>{action.title}</div>
+                                                        </div>
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )
+                                    }
+                                })}
+                            </Col>
+                            <Col xl="4">
+                                <h3 className="heading3 text-uppercase">Event details</h3>
+                                <div className="p-2 bg-white">
+                                    <Form.Row>
+                                        <Col xl="6" className="mb-3">
+                                            <Button className="customBtn" variant="primary" block>no action
+                                                needed</Button>
+                                        </Col>
+                                        <Col xl="6" className="mb-3">
+                                            <Button className="customBtn" variant="secondary" block
+                                                    onClick={() => this.setState({showActionModal: true})}>take
+                                                action</Button>
+                                        </Col>
+                                    </Form.Row>
+                                    <Tabs defaultActiveKey="details" id="details-tab" className="customTabs mb-3">
+                                        <Tab eventKey="details" title="DETAILS">
+                                            <Row>
+                                                <Col xl="6" className="mb-3">
+                                                    <div><b>Temperature Threshold</b></div>
+                                                    <div>50c</div>
+                                                </Col>
+                                                <Col xl="6" className="mb-3">
+                                                    <div><b>Sensor</b></div>
+                                                    <div>50c</div>
+                                                </Col>
+                                            </Row>
+                                        </Tab>
+                                        <Tab eventKey="location" title="LOCATION">
+                                            {/*{this.state.activeEventDetail.location ? this.state.activeEventDetail.location.map((item, i) => {*/}
+                                            {/*    if (item.url == "") {*/}
+                                            {/*        return <Alert variant="info">No Media Available</Alert>*/}
+                                            {/*    } else {*/}
+                                            {/*        if (item.type == "image") {*/}
+                                            {/*            return <div key={i} className="imgDiv mediaImg">*/}
+                                            {/*                <img src={item.url} className="img-fluid imgDiv__img"/>*/}
+                                            {/*            </div>*/}
+                                            {/*        } else if (item.type == "audio") {*/}
+                                            {/*            return <div className="text-center">*/}
+                                            {/*                <audio key={i} controls>*/}
+                                            {/*                    <source src={item.url}/>*/}
+                                            {/*                    Your browser does not support the audio element.*/}
+                                            {/*                </audio>*/}
+                                            {/*            </div>*/}
+                                            {/*        }*/}
+                                            {/*    }*/}
+
+                                            {/*}) : (<Alert variant="info">No Media Available</Alert>)}*/}
+                                            <Location/>
+                                        </Tab>
+                                        <Tab eventKey="media" title="MEDIA">
+                                            {/*{console.log('Htllo: ', this.state.activeEventDetail.media)}*/}
+                                            {this.state.activeEventDetail.media ? this.state.activeEventDetail.media.map((item, i) => {
+                                                if (item.url == "") {
+                                                    return <Alert variant="info">No Media Available</Alert>
+                                                } else {
+                                                    if (item.type == "image") {
+                                                        return <div key={i} className="imgDiv mediaImg">
+                                                            <img src={item.url} className="img-fluid imgDiv__img"/>
+                                                        </div>
+                                                    } else if (item.type == "audio") {
+                                                        return <div className="text-center">
+                                                            <audio key={i} controls>
+                                                                <source src={item.url}/>
+                                                                Your browser does not support the audio element.
+                                                            </audio>
                                                         </div>
                                                     }
+                                                }
 
-                                                })}
-                                            </div>
-                                            <div className="eventListing__text">
-                                                <div><b>Type</b></div>
-                                                {items.details.map((detail, i) => {
-                                                    if (detail.format == "incident_type") {
-                                                        return <div key={i}>
-                                                            <div>{detail.value}</div>
-                                                        </div>
-                                                    }
+                                            }) : (<Alert variant="info">No Media Available</Alert>)}
+                                        </Tab>
+                                    </Tabs>
 
-                                                })}
-                                            </div>
-                                            <div className="eventListing__text">
-                                                <div><b>Event ID</b></div>
-                                                <div><u>{items.id}</u></div>
-                                            </div>
-                                            <div className="eventListing__text">
-                                                <div><b>Vehicle</b></div>
-                                                {items.details.map((detail, i) => {
-                                                    if (detail.format == "vehicle") {
-                                                        return <div key={i}>
-                                                            <div>{detail.value}</div>
-                                                        </div>
-                                                    }
+                                </div>
 
-                                                })}
-                                            </div>
-                                            <div className="eventListing__text">
-                                                <div><b>Action</b></div>
-                                                {items.actions.map((action, i) => {
-                                                    return <div key={i}>
-                                                        <div>{action.action_taken}</div>
-                                                    </div>
-                                                })}
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            })}
-                        </Col>
-                        <Col xl="4">
-                            <h3 className="heading3 text-uppercase">Event details</h3>
-                            <div className="p-2 bg-white">
-                                <Form.Row>
-                                    <Col xl="6" className="mb-3">
-                                        <Button className="customBtn" variant="primary" block>no action
-                                            needed</Button>
-                                    </Col>
-                                    <Col xl="6" className="mb-3">
-                                        <Button className="customBtn" variant="secondary" block
-                                                onClick={() => this.setState({showActionModal: true})}>take
-                                            action</Button>
-                                    </Col>
-                                </Form.Row>
-                                <Tabs defaultActiveKey="details" id="details-tab" className="customTabs mb-3">
-                                    <Tab eventKey="details" title="DETAILS">
-                                        <Row>
-                                            <Col xl="6" className="mb-3">
-                                                <div><b>Temperature Threshold</b></div>
-                                                <div>50c</div>
-                                            </Col>
-                                            <Col xl="6" className="mb-3">
-                                                <div><b>Sensor</b></div>
-                                                <div>50c</div>
-                                            </Col>
-                                        </Row>
-                                    </Tab>
-                                    <Tab eventKey="location" title="LOCATION">
-                                        <Location/>
-                                    </Tab>
-                                    <Tab eventKey="media" title="MEDIA">
-                                        media
-                                    </Tab>
-                                </Tabs>
-                            </div>
-
-                        </Col>
-                    </Row>
+                            </Col>
+                        </Form.Row>
+                    </div>
                 </Container>
                 <TakeAction
                     show={this.state.showActionModal}
