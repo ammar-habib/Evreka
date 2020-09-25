@@ -9,7 +9,9 @@ class Location extends Component {
             lng: this.props.lng,
             zoom: 13
         }
+
     }
+
     render() {
         const position = [this.state.lat, this.state.lng];
         return (
