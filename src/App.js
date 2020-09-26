@@ -1674,28 +1674,15 @@ class App extends Component {
                                             </Row>
                                         </Tab>
                                         <Tab eventKey="location" title="LOCATION">
-                                            {
-                                                console.log('Htllo: ', this.state.activeEventDetail)
-                                            }
-                                            {this.state.activeEventDetail ? this.state.activeEventDetail.map((item, i) => {
-
-                                                return (
-                                                    <Col key={i} xl="6" className="mb-3">
-                                                        {/*<div><b>{item.title}</b></div>*/}
-                                                        {/*<div>{item.value}</div>*/}
-                                                        {/*<div>{item.format}</div>*/}
-                                                    </Col>
+                                            {this.state.activeEventLocation ?
+                                                (
+                                                    <Location
+                                                        lat={this.state.activeEventLocation.latitude}
+                                                        lng={this.state.activeEventLocation.longitude}
+                                                    />
                                                 )
-                                            }) : (<Alert className="w-100" variant="info">No Detail is available </Alert>)}
-                                            {/*{this.state.activeEventLocation ?*/}
-                                            {/*    (*/}
-                                            {/*        <Location*/}
-                                            {/*            lat={this.state.activeEventLocation.latitude}*/}
-                                            {/*            lng={this.state.activeEventLocation.longitude}*/}
-                                            {/*        />*/}
-                                            {/*    )*/}
 
-                                            {/*    : (<Alert variant="info">No Media Available</Alert>)}*/}
+                                                : (<Alert variant="info">No Location is Available</Alert>)}
 
                                         </Tab>
                                         <Tab eventKey="media" title="MEDIA">
@@ -1718,7 +1705,7 @@ class App extends Component {
                                                     }
                                                 }
 
-                                            }) : (<Alert variant="info">No Media Available</Alert>)}
+                                            }) : (<Alert variant="info">No Media is Available</Alert>)}
                                         </Tab>
                                     </Tabs>
 
