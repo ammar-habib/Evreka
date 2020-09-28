@@ -27,11 +27,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "03085"
-      },
       "details": [
         {
           "format": "date",
@@ -75,7 +70,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 13409,
       "location": {
         "latitude": 39.9229025,
@@ -110,11 +104,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "03085"
-      },
       "details": [
         {
           "format": "date",
@@ -158,7 +147,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 13408,
       "location": {
         "latitude": 39.9229025,
@@ -193,11 +181,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "03085"
-      },
       "details": [
         {
           "format": "date",
@@ -241,7 +224,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 13407,
       "location": {
         "latitude": 39.9229357,
@@ -276,11 +258,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "03085"
-      },
       "details": [
         {
           "format": "date",
@@ -324,7 +301,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 13406,
       "location": {
         "latitude": 39.9228845,
@@ -359,11 +335,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "2019"
-      },
       "details": [
         {
           "format": "date",
@@ -407,7 +378,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 13397,
       "location": {
         "latitude": 39.8959337,
@@ -442,11 +412,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "03085"
-      },
       "details": [
         {
           "format": "date",
@@ -490,7 +455,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 13003,
       "location": {
         "latitude": 39.9229594,
@@ -525,11 +489,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "03085"
-      },
       "details": [
         {
           "format": "date",
@@ -573,7 +532,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 13002,
       "location": {
         "latitude": 39.922966,
@@ -608,11 +566,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 683,
-        "driver_id": "2019"
-      },
       "details": [
         {
           "format": "date",
@@ -656,7 +609,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12982,
       "location": {
         "latitude": 39.8921736,
@@ -691,11 +643,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 920,
-        "driver_id": "1234"
-      },
       "details": [
         {
           "format": "date",
@@ -739,7 +686,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12834,
       "location": {
         "latitude": 39.8974902,
@@ -774,11 +720,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "123213"
-      },
       "details": [
         {
           "format": "date",
@@ -822,7 +763,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12833,
       "location": {
         "latitude": 39.8974793,
@@ -857,11 +797,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "123213"
-      },
       "details": [
         {
           "format": "date",
@@ -905,7 +840,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12832,
       "location": {
         "latitude": 39.8975212,
@@ -940,11 +874,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "123213"
-      },
       "details": [
         {
           "format": "date",
@@ -988,7 +917,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12831,
       "location": {
         "latitude": 39.8974983,
@@ -1023,11 +951,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 156,
-        "driver_id": "123213"
-      },
       "details": [
         {
           "format": "date",
@@ -1071,7 +994,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12830,
       "location": {
         "latitude": 39.8975006,
@@ -1106,11 +1028,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 920,
-        "driver_id": "1234"
-      },
       "details": [
         {
           "format": "date",
@@ -1154,7 +1071,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12828,
       "location": {
         "latitude": 39.8974943,
@@ -1189,11 +1105,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 683,
-        "driver_id": "95"
-      },
       "details": [
         {
           "format": "date",
@@ -1237,7 +1148,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12805,
       "location": {
         "latitude": 39.8974852,
@@ -1272,11 +1182,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 683,
-        "driver_id": "95"
-      },
       "details": [
         {
           "format": "date",
@@ -1320,7 +1225,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12804,
       "location": {
         "latitude": 39.8974852,
@@ -1355,11 +1259,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 683,
-        "driver_id": "95"
-      },
       "details": [
         {
           "format": "date",
@@ -1403,7 +1302,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12803,
       "location": {
         "latitude": 39.8974827,
@@ -1438,11 +1336,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 683,
-        "driver_id": "95"
-      },
       "details": [
         {
           "format": "date",
@@ -1486,7 +1379,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12802,
       "location": {
         "latitude": 39.8974827,
@@ -1521,11 +1413,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 683,
-        "driver_id": "95"
-      },
       "details": [
         {
           "format": "date",
@@ -1569,7 +1456,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12801,
       "location": {
         "latitude": 39.8974834,
@@ -1604,11 +1490,6 @@
           "action_id": 1
         }
       ],
-      "extras": {
-        "new": false,
-        "vehicle_id": 683,
-        "driver_id": "95"
-      },
       "details": [
         {
           "format": "date",
@@ -1652,7 +1533,6 @@
           "title": "Şoför"
         }
       ],
-      "type": "incident",
       "id": 12800,
       "location": {
         "latitude": 39.8974809,
