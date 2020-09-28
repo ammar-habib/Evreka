@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/common/location/google-marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/common/location/pin.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/common/location/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/common/location/location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +58,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1600972961183" />
-    <property name="last_opened_file_path" value="C:/Program Files/nodejs/node.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/component/common/location" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,11 +68,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\evreka\src\component" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\evreka\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\evreka\src\component\common\location" />
+      <recent name="D:\xampp\htdocs\evreka\src\component" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -138,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601275796450</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="location update.">
+      <created>1601286232560</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601286232560</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +172,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="event listing and event detail page." />
     <MESSAGE value="transfer date into external file." />
-    <option name="LAST_COMMIT_MESSAGE" value="transfer date into external file." />
+    <MESSAGE value="location update." />
+    <option name="LAST_COMMIT_MESSAGE" value="location update." />
   </component>
   <component name="masterDetails">
     <states>

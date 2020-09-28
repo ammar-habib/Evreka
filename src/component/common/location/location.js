@@ -1,8 +1,20 @@
 import React, {Component} from 'react';
 import {Map, Marker, Popup, TileLayer } from 'react-leaflet';
-import myIcon from '../../../logo.svg';
+import L from 'leaflet';
 
-// const { Map: LeafletMap, TileLayer, Marker, Popup } = ReactLeaflet
+
+const iconPerson = new L.Icon({
+    iconUrl: require('./pin.svg'),
+    iconRetinaUrl: require('./pin.svg'),
+    iconAnchor: null,
+    popupAnchor: null,
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    iconSize: new L.Point(60, 75),
+    className: 'leaflet-div-icon'
+});
+
 class Location extends Component {
     constructor(props) {
         super(props)
@@ -26,7 +38,7 @@ class Location extends Component {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
                 />
-                <Marker position={position}>
+                <Marker position={position} icon={iconPerson}>
                     <Popup>
                         A pretty CSS3 popup. <br/> Easily customizable.
                     </Popup>

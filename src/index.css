@@ -285,7 +285,12 @@ body {
     bottom: 0;
     margin: auto;
 }
-
+.leaflet-div-icon {
+    background: transparent;
+    border: none;
+    width: 40px !important;
+    height: 30px;
+}
 @media (min-width: 1920px) {
     .container {
         /*max-width: 1890px;*/
