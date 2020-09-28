@@ -18,20 +18,23 @@ class App extends Component {
         };
     }
 
+    componentDidMount() {
+        API.data.map((detail) => {
+            if (detail.title == "Aksiyon" && (detail.value == "-" || detail.value == "" || detail.title == "Çözüm Bildir")) {
+                this.setState({activeEventAction: true}, () => {
+                    console.log(this.state.activeEventAction);
+                });
+            }
+        })
+    }
+
     handleClick = id => {
         this.setState({activeEvent: id});
         API.data.map((items) => {
             if (items.id == id) {
                 this.setState({activeEventDetail: items}, () => {
                     console.log("hello", this.state.activeEventDetail);
-                    {this.state.activeEventDetail.details.map((detail, i) => {
-                        if (detail.title == "Aksiyon" && (detail.value == "-" || detail.value == "" || detail.title == "Çözüm Bildir")) {
-                            this.setState({activeEventAction: true }, () => {
-                                console.log(this.state.activeEventAction);
-                            });
-                        }
 
-                    })}
                 });
                 this.setState({activeEventLocation: items.location}, () => {
                     // console.log(this.state.activeEventLocation);
@@ -51,63 +54,64 @@ class App extends Component {
                             <Col xl="8">
                                 <h3 className="heading3 text-uppercase">Events</h3>
                                 <div className="eventListing">
-                                {API.data.map((items, i) => {
-                                    {
-                                        return (
-                                            <div key={i}
-                                                 className={"eventListing__list " + (items.id == this.state.activeEvent  ? 'selected' : ' ') || (this.state.activeEventAction == true  ? 'action' : ' ')}
-                                                 onClick={() => this.handleClick(items.id)}>
-                                                <div className="eventListing__text">
-                                                    <div><b>Tarih</b></div>
-                                                    {items.details.map((detail, i) => {
-                                                        if (detail.format == "date") {
-                                                            return <div key={i}>
-                                                                <div>{detail.value}</div>
-                                                            </div>
-                                                        }
+                                    {API.data.map((items, i) => {
 
-                                                    })}
-                                                </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Tip</b></div>
-                                                    {items.details.map((detail, i) => {
-                                                        if (detail.format == "incident_type") {
-                                                            return <div key={i}>
-                                                                <div>{detail.value}</div>
-                                                            </div>
-                                                        }
+                                        {
+                                            return (
+                                                <div key={i}
+                                                     className={"eventListing__list " + (items.id == this.state.activeEvent ? 'selected' : ' ') || (this.state.activeEventAction == true ? 'action' : ' ')}
+                                                     onClick={() => this.handleClick(items.id)}>
+                                                    <div className="eventListing__text">
+                                                        <div><b>Tarih</b></div>
+                                                        {items.details.map((detail, i) => {
+                                                            if (detail.format == "date") {
+                                                                return <div key={i}>
+                                                                    <div>{detail.value}</div>
+                                                                </div>
+                                                            }
 
-                                                    })}
-                                                </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Event ID</b></div>
-                                                    <div><u>{items.id}</u></div>
-                                                </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Araç</b></div>
-                                                    {items.details.map((detail, i) => {
-                                                        if (detail.format == "vehicle") {
-                                                            return <div key={i}>
-                                                                <div>{detail.value}</div>
-                                                            </div>
-                                                        }
+                                                        })}
+                                                    </div>
+                                                    <div className="eventListing__text">
+                                                        <div><b>Tip</b></div>
+                                                        {items.details.map((detail, i) => {
+                                                            if (detail.format == "incident_type") {
+                                                                return <div key={i}>
+                                                                    <div>{detail.value}</div>
+                                                                </div>
+                                                            }
 
-                                                    })}
+                                                        })}
+                                                    </div>
+                                                    <div className="eventListing__text">
+                                                        <div><b>Event ID</b></div>
+                                                        <div><u>{items.id}</u></div>
+                                                    </div>
+                                                    <div className="eventListing__text">
+                                                        <div><b>Araç</b></div>
+                                                        {items.details.map((detail, i) => {
+                                                            if (detail.format == "vehicle") {
+                                                                return <div key={i}>
+                                                                    <div>{detail.value}</div>
+                                                                </div>
+                                                            }
+
+                                                        })}
+                                                    </div>
+                                                    <div className="eventListing__text">
+                                                        <div><b>Aksiyon</b></div>
+                                                        {items.details.map((detail, i) => {
+                                                            if (detail.title == "Aksiyon") {
+                                                                return <div key={i}>
+                                                                    <div>{detail.value}</div>
+                                                                </div>
+                                                            }
+                                                        })}
+                                                    </div>
                                                 </div>
-                                                <div className="eventListing__text">
-                                                    <div><b>Aksiyon</b></div>
-                                                    {items.details.map((detail, i) => {
-                                                        if (detail.title == "Aksiyon") {
-                                                            return <div key={i}>
-                                                                <div>{detail.value}</div>
-                                                            </div>
-                                                        }
-                                                    })}
-                                                </div>
-                                            </div>
-                                        )
-                                    }
-                                })}
+                                            )
+                                        }
+                                    })}
                                 </div>
                             </Col>
                             <Col xl="4">
@@ -137,17 +141,18 @@ class App extends Component {
                                                             <div>{item.value}</div>
                                                         </Col>
                                                     )
-                                                }) : (<Alert className="w-100" variant="info">No Detail is available </Alert>)}
+                                                }) : (<Alert className="w-100" variant="info">No Detail is
+                                                    available </Alert>)}
                                             </Row>
                                         </Tab>
                                         <Tab eventKey="location" title="LOCATION">
                                             {this.state.activeEventLocation ?
                                                 <Location
-                                                lat={this.state.activeEventLocation.latitude}
-                                                lng={this.state.activeEventLocation.longitude}
+                                                    lat={this.state.activeEventLocation.latitude}
+                                                    lng={this.state.activeEventLocation.longitude}
                                                 />
 
-                                                 : (<Alert variant="info">No Location is Available</Alert>)}
+                                                : (<Alert variant="info">No Location is Available</Alert>)}
 
                                         </Tab>
                                         <Tab eventKey="media" title="MEDIA">
