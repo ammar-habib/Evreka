@@ -176,6 +176,9 @@ body {
 .eventListing__list.selected, .eventListing__list:hover {
     background: #FBF5D6;
 }
+.eventListing__list.action{
+    border-left: 6px solid #E9CF30;
+}
 
 .customTabs {
     border-bottom: 2px solid #8997B2;

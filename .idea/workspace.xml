@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/common/location/google-marker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/common/location/pin.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/common/location/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/common/location/location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,12 +66,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\evreka\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\evreka\src\component\common\location" />
       <recent name="D:\xampp\htdocs\evreka\src\component" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\evreka\src" />
     </key>
   </component>
   <component name="RunDashboard">

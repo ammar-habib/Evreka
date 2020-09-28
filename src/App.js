@@ -14,6 +14,7 @@ class App extends Component {
             activeEvent: null,
             activeEventDetail: false,
             activeEventLocation: false,
+            activeEventAction: false,
         };
     }
 
@@ -22,11 +23,20 @@ class App extends Component {
         API.data.map((items) => {
             if (items.id == id) {
                 this.setState({activeEventDetail: items}, () => {
-                    // console.log(this.state.activeEventDetail);
+                    console.log("hello", this.state.activeEventDetail);
+                    {this.state.activeEventDetail.details.map((detail, i) => {
+                        if (detail.title == "Aksiyon" && (detail.value == "-" || detail.value == "" || detail.title == "Çözüm Bildir")) {
+                            this.setState({activeEventAction: true }, () => {
+                                console.log(this.state.activeEventAction);
+                            });
+                        }
+
+                    })}
                 });
                 this.setState({activeEventLocation: items.location}, () => {
-                    console.log(this.state.activeEventLocation);
+                    // console.log(this.state.activeEventLocation);
                 });
+
             }
 
         })
@@ -45,7 +55,7 @@ class App extends Component {
                                     {
                                         return (
                                             <div key={i}
-                                                 className={"eventListing__list " + (items.id == this.state.activeEvent ? 'selected' : ' ')}
+                                                 className={"eventListing__list " + (items.id == this.state.activeEvent  ? 'selected' : ' ') || (this.state.activeEventAction == true  ? 'action' : ' ')}
                                                  onClick={() => this.handleClick(items.id)}>
                                                 <div className="eventListing__text">
                                                     <div><b>Tarih</b></div>
