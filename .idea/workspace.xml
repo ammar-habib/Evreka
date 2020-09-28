@@ -7,7 +7,7 @@
     <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/common/location/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/common/location/location.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600880624252</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="transfer date into external file.">
+      <created>1601275796450</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601275796450</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,7 +161,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="event listing and event detail page." />
-    <option name="LAST_COMMIT_MESSAGE" value="event listing and event detail page." />
+    <MESSAGE value="transfer date into external file." />
+    <option name="LAST_COMMIT_MESSAGE" value="transfer date into external file." />
   </component>
   <component name="masterDetails">
     <states>

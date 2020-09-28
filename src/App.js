@@ -132,14 +132,12 @@ class App extends Component {
                                         </Tab>
                                         <Tab eventKey="location" title="LOCATION">
                                             {this.state.activeEventLocation ?
-                                                (
-                                                    <Location
-                                                        lat={this.state.activeEventLocation.latitude}
-                                                        lng={this.state.activeEventLocation.longitude}
-                                                    />
-                                                )
+                                                <Location
+                                                lat={this.state.activeEventLocation.latitude}
+                                                lng={this.state.activeEventLocation.longitude}
+                                                />
 
-                                                : (<Alert variant="info">No Location is Available</Alert>)}
+                                                 : (<Alert variant="info">No Location is Available</Alert>)}
 
                                         </Tab>
                                         <Tab eventKey="media" title="MEDIA">

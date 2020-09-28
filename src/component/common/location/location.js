@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import myIcon from '../../../logo.svg';
+
 // const { Map: LeafletMap, TileLayer, Marker, Popup } = ReactLeaflet
 class Location extends Component {
     constructor(props) {
@@ -11,7 +13,11 @@ class Location extends Component {
         }
 
     }
-
+    componentDidUpdate() {
+        if(this.state.lat !== this.props.lat && this.state.lng !== this.props.lng) {
+            this.setState({lat: this.props.lat,lng: this.props.lng});
+        }
+    }
     render() {
         const position = [this.state.lat, this.state.lng];
         return (
