@@ -22,9 +22,9 @@ class App extends Component {
 
     componentDidMount() {
         let actionArr = [];
-        API.data.map((items, i) => {
-            items.details.map((detail, i) => {
-                if (detail.title == "Aksiyon" && (detail.value == "-" || detail.value == "" || detail.title == "Çözüm Bildir")) {
+        API.data.map((items) => {
+            items.details.map((detail) => {
+                if (detail.title == "Aksiyon" && (detail.value == "-" || detail.value == "")) {
                     items.eventActionItem = true;
                     actionArr.push(items.id);
                 }
@@ -61,9 +61,12 @@ class App extends Component {
 
         })
         if (this.state.activeEventDetail.id == id) {
-            this.state.activeEventDetail.details.map((items) => {
-
-
+            this.state.activeEventDetail.details.map((detail) => {
+                console.log("detail", detail)
+                if (detail.title == "Aksiyon") {
+                    detail.value = "no action need"
+                }
+                console.log("detail", detail)
             })
         }
 
