@@ -14,18 +14,28 @@ class App extends Component {
             activeEvent: null,
             activeEventDetail: false,
             activeEventLocation: false,
-            activeEventAction: false,
+            eventAction: [],
+            eventActionItem: false,
         };
     }
 
     componentDidMount() {
-        API.data.map((detail) => {
-            if (detail.title == "Aksiyon" && (detail.value == "-" || detail.value == "" || detail.title == "Çözüm Bildir")) {
-                this.setState({activeEventAction: true}, () => {
-                    console.log(this.state.activeEventAction);
-                });
-            }
+        let actionArr =[];
+        API.data.map((items, i) => {
+            items.details.map((detail, i) => {
+
+                if (detail.title == "Aksiyon" && (detail.value == "-" || detail.value == "" || detail.title == "Çözüm Bildir")) {
+                    items.eventActionItem = true;
+                    actionArr.push(items.id);
+                }
+            })
         })
+
+        this.setState({ eventAction:actionArr },()=>{
+            console.log("eventAction", this.state.eventAction)
+
+        })
+
     }
 
     handleClick = id => {
@@ -33,7 +43,7 @@ class App extends Component {
         API.data.map((items) => {
             if (items.id == id) {
                 this.setState({activeEventDetail: items}, () => {
-                    console.log("hello", this.state.activeEventDetail);
+                    // console.log("hello", this.state.activeEventDetail);
 
                 });
                 this.setState({activeEventLocation: items.location}, () => {
@@ -59,7 +69,7 @@ class App extends Component {
                                         {
                                             return (
                                                 <div key={i}
-                                                     className={"eventListing__list " + (items.id == this.state.activeEvent ? 'selected' : ' ') || (this.state.activeEventAction == true ? 'action' : ' ')}
+                                                     className={"eventListing__list" + (items.id == this.state.activeEvent ? ' selected ' : ' ')+(items.eventActionItem ? 'action':' ')}
                                                      onClick={() => this.handleClick(items.id)}>
                                                     <div className="eventListing__text">
                                                         <div><b>Tarih</b></div>
@@ -189,7 +199,6 @@ class App extends Component {
                     show={this.state.showActionModal}
                     hide={() => this.setState({showActionModal: false})}
                 />
-
             </div>
         );
     }
