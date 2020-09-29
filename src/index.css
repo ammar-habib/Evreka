@@ -154,7 +154,9 @@ body {
 }
 
 .eventListing {
-
+    max-height: 85vh;
+    overflow-y: auto;
+    margin-left: -15px;
 }
 
 .eventListing__list {
@@ -169,7 +171,6 @@ body {
     background: #ffffff;
     box-shadow: 0 3px 6px #00000029;
     padding: 12.5px 20px;
-    margin-left: -15px;
     cursor: pointer;
 }
 
