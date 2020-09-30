@@ -2,14 +2,33 @@ import React, {Component} from 'react';
 import {Button, Modal, Tab, Tabs, Form} from "react-bootstrap";
 import ActionTaken from "../action-taken/action.taken";
 
+const actionListing = [
+    {id: 1, title: 'Mark As Resolved', content: 'Mark this event as resolved and enter the details of the resolution.'},
+    {id: 2, title: 'Change Asset', content: 'Change the asset with another one.'}
+];
 
 class TakeAction extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             showActionTaken: false,
+            activeListId: null
         };
     }
+
+    activeList = id => {
+        console.log("list id", id);
+        // this.setState({activeList: true});
+        actionListing.map((list) => {
+            console.log("list", list);
+            if (list.id == id) {
+                this.setState({
+                    activeListId: id
+                }, () => {
+                });
+            }
+        })
+    };
 
     render() {
         return (
@@ -20,21 +39,21 @@ class TakeAction extends React.Component {
                     <Modal.Body>
                         <Tabs defaultActiveKey="select action" id="action-tab"
                               className="customTabs customTabs--action mb-4 justify-content-center">
-                            <Tab eventKey="select action" title="SELECT ACTION">
+                            <Tab eventKey="select action" title="1 SELECT ACTION">
+
                                 <div className="actionListing">
-                                    <div className="actionList">
-                                        <p className="actionList__title"><b>Mark As Resolved</b></p>
-                                        <p className="actionList__text">Mark this event as resolved and enter the
-                                            details
-                                            of the resolution.</p>
-                                    </div>
-                                    <div className="actionList">
-                                        <p className="actionList__title"><b>Change Asset</b></p>
-                                        <p className="actionList__text">Change the asset with another one.</p>
-                                    </div>
+                                    {actionListing.map((list, i) => {
+                                        return (
+                                            <div key={i} className={"actionList" + (list.id == this.state.activeListId ? ' selected ' : ' ')}
+                                                 onClick={() => this.activeList(list.id)}>
+                                                <p className="actionList__title"><b>{list.title}</b></p>
+                                                <p className="actionList__text">{list.content}</p>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                                 <div className="text-center">
-                                    <Button className="customBtn" variant="secondary">Next</Button>
+                                    <Button className="customBtn" variant="secondary" disabled>Next</Button>
                                 </div>
                             </Tab>
                             <Tab eventKey="take action" title="2 TAKE ACTION">

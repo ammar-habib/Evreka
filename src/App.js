@@ -42,14 +42,12 @@ class App extends Component {
         this.setState({activeEvent: id});
         API.data.map((items) => {
             if (items.id == id) {
-                this.setState({activeEventDetail: items}, () => {
-                    console.log("hello", this.state.activeEventDetail);
-
+                this.setState({
+                    activeEventDetail: items,
+                    activeEventLocation: items.location,
+                    noActionNeed: true
+                }, () => {
                 });
-                this.setState({activeEventLocation: items.location}, () => {
-                    // console.log(this.state.activeEventLocation);
-                });
-
             }
         })
     };
@@ -65,12 +63,19 @@ class App extends Component {
                 console.log("detail", detail)
                 if (detail.title == "Aksiyon") {
                     detail.value = "no action need"
+                    this.state.activeEventDetail.eventActionItem = false;
                 }
-                console.log("detail", detail)
             })
         }
+    }
 
+    takeAction = id => {
+        if (this.state.activeEventDetail.id == id) {
+            this.setState({showActionModal: true}, () => {
+                console.log("noActionNeed", this.state.noActionNeed)
 
+            })
+        }
     }
 
 
@@ -157,7 +162,7 @@ class App extends Component {
                                                     </Col>
                                                     <Col sm="6" className="mb-3">
                                                         <Button className="customBtn" variant="secondary" block
-                                                                onClick={() => this.setState({showActionModal: true})}>take
+                                                                onClick={() => this.takeAction(this.state.activeEventDetail.id)}>take
                                                             action</Button>
                                                     </Col>
                                                 </Form.Row>

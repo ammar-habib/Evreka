@@ -215,6 +215,7 @@ body {
 
 .actionListing {
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .actionList {
@@ -237,12 +238,12 @@ body {
     color: #454F63;
 }
 
-.actionList:hover {
+.actionList:hover, .actionList.selected  {
     background: #454F63;
     color: #ffffff;
 }
 
-.actionList:hover .actionList__text {
+.actionList:hover .actionList__text, .actionList.selected .actionList__text {
     color: #ffffff;
 }
 
