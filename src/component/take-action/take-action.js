@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useCallback} from 'react';
 import {Button, Modal, Tab, Tabs, Form} from "react-bootstrap";
 import ActionTaken from "../action-taken/action.taken";
 
@@ -12,39 +12,77 @@ class TakeAction extends React.Component {
         super(props);
         this.state = {
             showActionTaken: false,
-            activeListId: null
+            activeTab: 1,
+            activeList: {},
+            activeBtn: false,
+            resolutionDetail: null,
+            showLoader: false,
         };
+        this.handleSelect = this.handleSelect.bind(this)
+        this.resolutionDetail = this.resolutionDetail.bind(this)
+    }
+
+    handleSelect(key) {
+        this.setState({activeTab: key});
     }
 
     activeList = id => {
         console.log("list id", id);
         // this.setState({activeList: true});
         actionListing.map((list) => {
-            console.log("list", list);
             if (list.id == id) {
                 this.setState({
-                    activeListId: id
+                    // activeListId: id,
+                    activeList: list,
+                    activeBtn: true
                 }, () => {
+                    console.log("list", this.state.activeList);
                 });
             }
         })
     };
+    resolutionDetail = (event) => {
+        this.setState({resolutionDetail: event.target.value}, () => {
+        });
+
+    }
+    takeAction = () => {
+        if (this.state.resolutionDetail == '') {
+            this.setState({showLoader: true}, () => {
+
+                // setTimeout(() => {
+                //     this.setState({showLoader: false}, () => {
+                //     });
+                // }, 1000);
+            });
+            alert("A PROBLEM OCCURRED!");
+        }
+    }
 
     render() {
         return (
             <React.Fragment>
                 <Modal className="common-modal" size="lg" aria-labelledby="contained-modal-title-vcenter" centered
                        show={this.props.show} onHide={this.props.hide}>
+                    {this.state.showLoader ? (
+                        <Modal.Body>
+                            <div className="loader-div">
+                                <div className="loader"></div>
+                            </div>
+                        </Modal.Body>
+                    ) : ''}
+
                     <Modal.Header closeButton/>
                     <Modal.Body>
-                        <Tabs defaultActiveKey="select action" id="action-tab"
+                        <Tabs activeKey={this.state.activeTab} onSelect={this.handleSelect} id="action-tab"
                               className="customTabs customTabs--action mb-4 justify-content-center">
-                            <Tab eventKey="select action" title="1 SELECT ACTION">
+                            <Tab eventKey={1} title="1 SELECT ACTION">
 
                                 <div className="actionListing">
                                     {actionListing.map((list, i) => {
                                         return (
-                                            <div key={i} className={"actionList" + (list.id == this.state.activeListId ? ' selected ' : ' ')}
+                                            <div key={i}
+                                                 className={"actionList" + (list.id == this.state.activeList.id ? ' selected ' : ' ')}
                                                  onClick={() => this.activeList(list.id)}>
                                                 <p className="actionList__title"><b>{list.title}</b></p>
                                                 <p className="actionList__text">{list.content}</p>
@@ -53,25 +91,31 @@ class TakeAction extends React.Component {
                                     })}
                                 </div>
                                 <div className="text-center">
-                                    <Button className="customBtn" variant="secondary" disabled>Next</Button>
+                                    <Button className="customBtn" variant="secondary"
+                                            onClick={() => this.handleSelect(2)}
+                                            disabled={this.state.activeBtn == false}>Next</Button>
                                 </div>
                             </Tab>
-                            <Tab eventKey="take action" title="2 TAKE ACTION">
+                            <Tab eventKey={2} title="2 TAKE ACTION" disabled={this.state.activeBtn == false}>
                                 <div className="mb-4">
-                                    <p className="mb-1"><b>Mark As Resolved</b></p>
-                                    <p className="mb-1">Mark this event as resolved and enter the details
-                                        of the resolution.</p>
+                                    <p className="mb-1"><b>{this.state.activeList.title}</b></p>
+                                    <p className="mb-1">{this.state.activeList.content}</p>
                                 </div>
                                 <Form.Group>
                                     <Form.Label>Resolution Detail*</Form.Label>
-                                    <Form.Control placeholder="Enter resolution detail…" as="textarea" rows="3"/>
+                                    <Form.Control maxLength="300" value={this.state.resolutionDetail}
+                                                  onChange={this.resolutionDetail}
+                                                  placeholder="Enter resolution detail…" as="textarea" rows="3"/>
+                                    <p>{this.state.resolutionDetail}/300</p>
                                 </Form.Group>
                                 <ul className="list-inline text-center mb-0">
                                     <li className="list-inline-item mb-1">
-                                        <Button className="customBtn" variant="primary">Back</Button>
+                                        <Button className="customBtn" variant="primary"
+                                                onClick={() => this.handleSelect(1)}>Back</Button>
                                     </li>
                                     <li className="list-inline-item mb-1">
-                                        <Button className="customBtn" variant="secondary">Take Action</Button>
+                                        <Button className="customBtn" variant="secondary"
+                                                onClick={() => this.takeAction()}>Take Action</Button>
                                     </li>
                                 </ul>
                             </Tab>

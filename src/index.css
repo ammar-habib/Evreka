@@ -177,7 +177,8 @@ body {
 .eventListing__list.selected, .eventListing__list:hover {
     background: #FBF5D6;
 }
-.eventListing__list.action{
+
+.eventListing__list.action {
     border-left: 6px solid #E9CF30;
 }
 
@@ -238,7 +239,7 @@ body {
     color: #454F63;
 }
 
-.actionList:hover, .actionList.selected  {
+.actionList:hover, .actionList.selected {
     background: #454F63;
     color: #ffffff;
 }
@@ -290,12 +291,50 @@ body {
     bottom: 0;
     margin: auto;
 }
+
 .leaflet-div-icon {
     background: transparent;
     border: none;
     width: 40px !important;
     height: 30px;
 }
+
+.loader-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media (min-width: 1920px) {
     .container {
         /*max-width: 1890px;*/
@@ -353,6 +392,7 @@ body {
     .eventListing__text {
         margin-bottom: 8px;
     }
+
     .common-modal .modal-header {
         padding: 1rem 1rem 0;
     }
@@ -360,15 +400,19 @@ body {
     .common-modal .modal-body {
         padding: 0 1rem 1rem;
     }
-    .common-modal .modal-dialog{
+
+    .common-modal .modal-dialog {
         margin: 0 1rem;
     }
-    .customTabs--action .nav-link{
+
+    .customTabs--action .nav-link {
         font-size: 16px;
     }
+
     .customTabs--action .nav-link:not(:last-child) {
         margin-right: 0;
     }
+
     .heading3 {
         font-size: 20px;
     }
