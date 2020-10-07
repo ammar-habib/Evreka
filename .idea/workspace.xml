@@ -4,10 +4,10 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="">
+    <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="working on action.">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/take-action/take-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/take-action/take-action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,10 +66,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/component/common/location" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -123,7 +126,9 @@
       <workItem from="1601039182611" duration="133000" />
       <workItem from="1601877177627" duration="726000" />
       <workItem from="1601877943015" duration="469000" />
-      <workItem from="1601879902726" duration="14322000" />
+      <workItem from="1601879902726" duration="14362000" />
+      <workItem from="1601963038359" duration="1172000" />
+      <workItem from="1602070926924" duration="4914000" />
     </task>
     <task id="LOCAL-00001" summary="event listing and event detail page.">
       <created>1600802212858</created>
@@ -181,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601470326579</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="working on action.">
+      <created>1601903106744</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601903106744</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +220,8 @@
     <MESSAGE value="location update." />
     <MESSAGE value="update right side yellow bar." />
     <MESSAGE value="working on action modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on action modal" />
+    <MESSAGE value="working on action." />
+    <option name="LAST_COMMIT_MESSAGE" value="working on action." />
   </component>
   <component name="masterDetails">
     <states>

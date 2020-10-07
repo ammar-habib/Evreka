@@ -15,7 +15,7 @@ class TakeAction extends React.Component {
             activeTab: 1,
             activeList: {},
             activeBtn: false,
-            resolutionDetail: null,
+            resolutionDetail: '',
             showLoader: false,
         };
         this.handleSelect = this.handleSelect.bind(this)
@@ -36,7 +36,7 @@ class TakeAction extends React.Component {
                     activeList: list,
                     activeBtn: true
                 }, () => {
-                    console.log("list", this.state.activeList);
+
                 });
             }
         })
@@ -44,20 +44,30 @@ class TakeAction extends React.Component {
     resolutionDetail = (event) => {
         this.setState({resolutionDetail: event.target.value}, () => {
         });
+        let characterCount = this.state.resolutionDetail.length;
 
     }
     takeAction = () => {
-        if (this.state.resolutionDetail == '') {
-            this.setState({showLoader: true}, () => {
+        this.setState({
+            showLoader: true
+        }, () => {
+            setTimeout(() => {
+               this.setState({showLoader: false})
+            }, 1000);
+        });
+        setTimeout(() => {
+            if (this.state.resolutionDetail == '') {
+                alert("A PROBLEM OCCURRED!");
+            }
+        }, 1500);
 
-                // setTimeout(() => {
-                //     this.setState({showLoader: false}, () => {
-                //     });
-                // }, 1000);
-            });
-            alert("A PROBLEM OCCURRED!");
-        }
     }
+
+    // componentDidMount() {
+    //     setTimeout(() => {
+    //         this.takeAction();
+    //     }, 3000);
+    // }
 
     render() {
         return (
@@ -106,8 +116,8 @@ class TakeAction extends React.Component {
                                     <Form.Control maxLength="300" value={this.state.resolutionDetail}
                                                   onChange={this.resolutionDetail}
                                                   placeholder="Enter resolution detail…" as="textarea" rows="3"/>
-                                    <p>{this.state.resolutionDetail}/300</p>
                                 </Form.Group>
+                                <p className="text-right"><small>{this.state.resolutionDetail.length}/300</small></p>
                                 <ul className="list-inline text-center mb-0">
                                     <li className="list-inline-item mb-1">
                                         <Button className="customBtn" variant="primary"
