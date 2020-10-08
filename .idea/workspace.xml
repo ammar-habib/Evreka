@@ -4,8 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="working on action.">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+    <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/take-action/take-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/take-action/take-action.js" afterDir="false" />
     </list>
@@ -128,7 +127,8 @@
       <workItem from="1601877943015" duration="469000" />
       <workItem from="1601879902726" duration="14362000" />
       <workItem from="1601963038359" duration="1172000" />
-      <workItem from="1602070926924" duration="4914000" />
+      <workItem from="1602070926924" duration="5001000" />
+      <workItem from="1602140558382" duration="2238000" />
     </task>
     <task id="LOCAL-00001" summary="event listing and event detail page.">
       <created>1600802212858</created>
@@ -193,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601903106744</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="working on textarea.">
+      <created>1602076286275</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1602076286275</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +228,8 @@
     <MESSAGE value="update right side yellow bar." />
     <MESSAGE value="working on action modal" />
     <MESSAGE value="working on action." />
-    <option name="LAST_COMMIT_MESSAGE" value="working on action." />
+    <MESSAGE value="working on textarea." />
+    <option name="LAST_COMMIT_MESSAGE" value="working on textarea." />
   </component>
   <component name="masterDetails">
     <states>
