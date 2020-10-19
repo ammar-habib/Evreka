@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Modal, Tab, Tabs, Form} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 
 
 class ActionTaken extends React.Component {
