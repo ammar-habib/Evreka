@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'leaflet/dist/leaflet.css';
 import './index.css';
+import './style';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import jquery from 'jquery';

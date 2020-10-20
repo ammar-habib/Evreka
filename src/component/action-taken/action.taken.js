@@ -5,8 +5,7 @@ import {Modal} from "react-bootstrap";
 class ActionTaken extends React.Component {
     render() {
         return (
-            <Modal className="common-modal" size="lg" aria-labelledby="contained-modal-title-vcenter" centered
-                   show={this.props.show} onHide={this.props.hide}>
+            <Modal className="common-modal" size="lg" aria-labelledby="contained-modal-title-vcenter" centered show>
                 <Modal.Header closeButton/>
                 <Modal.Body>
                     <div className="text-center">

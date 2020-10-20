@@ -18,7 +18,7 @@ class TakeAction extends React.Component {
             resolutionDetail: '',
             showLoader: false,
             errorState: false,
-            actionSuccess: false
+            successState: false
         };
         this.handleSelect = this.handleSelect.bind(this)
         this.resolutionDetail = this.resolutionDetail.bind(this)
@@ -58,12 +58,17 @@ class TakeAction extends React.Component {
             }, 1000);
         });
         setTimeout(() => {
-            if (this.state.resolutionDetail == '' || this.state.resolutionDetail.length < 30) {
-                alert("A PROBLEM OCCURRED!");
-                this.setState({errorState: true})
+            if (this.state.resolutionDetail == '' || this.state.resolutionDetail.length < 300) {
+                this.setState({errorState: true});
+                alert('hello');
+            } else {
+                this.setState({successState: true});
             }
         }, 1500);
 
+    }
+    isActionTaken = () => {
+        return <ActionTaken/>
     }
 
     // componentDidMount() {
@@ -84,27 +89,27 @@ class TakeAction extends React.Component {
                         </Modal.Body>
                     </Modal>
                 ) : (
-                    this.state.errorState ? (
-                        <Modal className="common-modal" size="lg" aria-labelledby="contained-modal-title-vcenter"
-                               centered>
-                            <Modal.Header closeButton show/>
+                    <Modal className="common-modal" size="lg" aria-labelledby="contained-modal-title-vcenter"
+                           centered
+                           show={this.props.show} onHide={this.props.hide}>
+                        <Modal.Header closeButton/>
+                        {this.state.errorState ? (
                             <Modal.Body>
                                 <div className="text-center">
-                                    <h2 className="heading2 text-uppercase color-primary3">ACTION Not TAKEN!</h2>
-                                    <p>You can see the action details from details tab.</p>
-                                </div>
-
-                                <div className="text-center">
-                                    <h2 className="heading2 text-uppercase color-primary3">ACTION HAS BEEN TAKEN!</h2>
+                                    <h2 className="heading2 text-uppercase color-primary3">ACTION not BEEN TAKEN!</h2>
                                     <p>You can see the action details from details tab.</p>
                                 </div>
                             </Modal.Body>
-                        </Modal>
-                    ) : (
-                        <Modal className="common-modal" size="lg" aria-labelledby="contained-modal-title-vcenter"
-                               centered
-                               show={this.props.show} onHide={this.props.hide}>
-                            <Modal.Header closeButton/>
+                        ) : ''}
+                        {this.state.successState ? (
+                            <Modal.Body>
+                                <div className="text-center">
+                                    <h2 className="heading2 text-uppercase color-primary3">ACTION BEEN TAKEN!</h2>
+                                    <p>You can see the action details from details tab.</p>
+                                </div>
+                            </Modal.Body>
+                        ) : ''}
+                        {!this.state.errorState && !this.state.successState ? (
                             <Modal.Body>
                                 <Tabs activeKey={this.state.activeTab} onSelect={this.handleSelect} id="action-tab"
                                       className="customTabs customTabs--action mb-4 justify-content-center">
@@ -155,11 +160,9 @@ class TakeAction extends React.Component {
                                     </Tab>
                                 </Tabs>
                             </Modal.Body>
-                        </Modal>
-                    )
+                        ) : ''}
+                    </Modal>
                 )}
-
-
             </React.Fragment>
         )
     }

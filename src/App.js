@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Container, Row, Col, Tabs, Tab, Form, Button, Alert} from "react-bootstrap";
-import './App.css';
+import {PageWrapper, PageContent, Heading3, EventListing, EventList, EventListText} from './style.js';
 import TakeAction from "./component/take-action/take-action";
 import Location from "./component/common/location/location";
 import API from "./api";
@@ -81,84 +81,81 @@ class App extends Component {
 
     render() {
         return (
-            <div className="page-wrapper">
+            <PageWrapper>
                 <Container>
-                    <div className="page-content">
-                        <Form.Row className="">
+                    <PageContent>
+                        <Form.Row>
                             <Col xl="8">
-                                <h3 className="heading3 text-uppercase">Events</h3>
-                                <div className="eventListing">
+                                <Heading3>Events</Heading3>
+                                <EventListing>
                                     {API.data.map((items, i) => {
 
                                         {
                                             return (
-                                                <div key={i}
-                                                     className={"eventListing__list" + (items.id == this.state.activeEvent ? ' selected ' : ' ') + (items.eventActionItem ? 'action' : ' ')}
-                                                     onClick={() => this.handleClick(items.id)}>
-                                                    <div className="eventListing__text">
+                                                <EventList selected={items.id == this.state.activeEvent}
+                                                           action={items.eventActionItem} key={i}
+                                                           onClick={() => this.handleClick(items.id)}>
+                                                    <EventListText>
                                                         <div><b>Tarih</b></div>
                                                         {items.details.map((detail, i) => {
                                                             if (detail.format == "date") {
                                                                 return <div key={i}>
-                                                                    <div>{detail.value}</div>
+                                                                    {detail.value}
                                                                 </div>
                                                             }
 
                                                         })}
-                                                    </div>
-                                                    <div className="eventListing__text">
+                                                    </EventListText>
+                                                    <EventListText>
                                                         <div><b>Tip</b></div>
                                                         {items.details.map((detail, i) => {
                                                             if (detail.format == "incident_type") {
                                                                 return <div key={i}>
-                                                                    <div>{detail.value}</div>
+                                                                    {detail.value}
                                                                 </div>
                                                             }
 
                                                         })}
-                                                    </div>
-                                                    <div className="eventListing__text">
+                                                    </EventListText>
+                                                    <EventListText>
                                                         <div><b>Event ID</b></div>
                                                         <div><u>{items.id}</u></div>
-                                                    </div>
-                                                    <div className="eventListing__text">
+                                                    </EventListText>
+                                                    <EventListText>
                                                         <div><b>Araç</b></div>
                                                         {items.details.map((detail, i) => {
                                                             if (detail.format == "vehicle") {
                                                                 return <div key={i}>
-                                                                    <div>{detail.value}</div>
+                                                                   {detail.value}
                                                                 </div>
                                                             }
 
                                                         })}
-                                                    </div>
-                                                    <div className="eventListing__text">
+                                                    </EventListText>
+                                                    <EventListText>
                                                         <div><b>Aksiyon</b></div>
                                                         {items.details.map((detail, i) => {
                                                             if (detail.title == "Aksiyon") {
                                                                 return <div key={i}>
-                                                                    <div>{detail.value}</div>
+                                                                    {detail.value}
                                                                 </div>
                                                             }
                                                         })}
-                                                    </div>
-                                                </div>
+                                                    </EventListText>
+                                                </EventList>
                                             )
                                         }
                                     })}
-                                </div>
+                                </EventListing>
                             </Col>
                             <Col xl="4">
-                                <h3 className="heading3 text-uppercase">Event details</h3>
+                                <Heading3>Event details</Heading3>
                                 {this.state.activeEventDetail ? (
                                         <div className="p-2 bg-white">
                                             {this.state.noActionNeed ? (
                                                 <Form.Row>
                                                     <Col sm="6" className="mb-3">
-                                                        <Button className="customBtn" variant="primary" block
-                                                                onClick={() => this.noAction(this.state.activeEventDetail.id)}>no
-                                                            action
-                                                            needed</Button>
+                                                        <Button block onClick={() => this.noAction(this.state.activeEventDetail.id)}>no action needed</Button>
                                                     </Col>
                                                     <Col sm="6" className="mb-3">
                                                         <Button className="customBtn" variant="secondary" block
@@ -167,13 +164,6 @@ class App extends Component {
                                                     </Col>
                                                 </Form.Row>
 
-                                                // this.state.activeEventDetail.map((item, i) => {
-                                                //     {
-                                                //         return (
-                                                //
-                                                //         )
-                                                //     }
-                                                // })
 
                                             ) : ''}
 
@@ -234,13 +224,13 @@ class App extends Component {
                                 }
                             </Col>
                         </Form.Row>
-                    </div>
+                    </PageContent>
                 </Container>
                 <TakeAction
                     show={this.state.showActionModal}
                     hide={() => this.setState({showActionModal: false})}
                 />
-            </div>
+            </PageWrapper>
         );
     }
 }
