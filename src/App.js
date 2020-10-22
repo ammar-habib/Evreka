@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container, Row, Col, Tabs, Tab, Form, Button, Alert} from "react-bootstrap";
-import {PageWrapper, PageContent, Heading3, EventListing, EventList, EventListText} from './style.js';
+import {PageWrapper, PageContent, Heading3, EventListing, EventList, EventListText, Btn, MyTabs} from './style.js';
+// import *  as './style.js';
 import TakeAction from "./component/take-action/take-action";
 import Location from "./component/common/location/location";
 import API from "./api";
@@ -126,7 +127,7 @@ class App extends Component {
                                                         {items.details.map((detail, i) => {
                                                             if (detail.format == "vehicle") {
                                                                 return <div key={i}>
-                                                                   {detail.value}
+                                                                    {detail.value}
                                                                 </div>
                                                             }
 
@@ -155,19 +156,20 @@ class App extends Component {
                                             {this.state.noActionNeed ? (
                                                 <Form.Row>
                                                     <Col sm="6" className="mb-3">
-                                                        <Button block onClick={() => this.noAction(this.state.activeEventDetail.id)}>no action needed</Button>
+                                                        <Btn variant="primary" block
+                                                             onClick={() => this.noAction(this.state.activeEventDetail.id)}>no
+                                                            action needed</Btn>
                                                     </Col>
                                                     <Col sm="6" className="mb-3">
-                                                        <Button className="customBtn" variant="secondary" block
-                                                                onClick={() => this.takeAction(this.state.activeEventDetail.id)}>take
-                                                            action</Button>
+                                                        <Btn variant="secondary" block
+                                                             onClick={() => this.takeAction(this.state.activeEventDetail.id)}>take
+                                                            action</Btn>
                                                     </Col>
                                                 </Form.Row>
 
 
                                             ) : ''}
-
-                                            <Tabs defaultActiveKey="details" id="details-tab" className="customTabs mb-3">
+                                            <MyTabs defaultActiveKey="details" id="details-tab" className="mb-3">
                                                 <Tab eventKey="details" title="DETAILS">
                                                     <Row className="m-0">
                                                         {this.state.activeEventDetail.details ? this.state.activeEventDetail.details.map((item, i) => {
@@ -216,7 +218,7 @@ class App extends Component {
 
                                                     }) : (<Alert variant="info">No Media is Available</Alert>)}
                                                 </Tab>
-                                            </Tabs>
+                                            </MyTabs>
 
                                         </div>
                                     ) :

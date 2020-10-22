@@ -112,8 +112,8 @@ body {
 }
 
 .btn-primary {
-    background: #172C49;
-    border-color: #172C49;
+    /*background: #172C49;*/
+    /*border-color: #172C49;*/
 }
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
@@ -122,14 +122,14 @@ body {
 }
 
 .btn-primary:hover, .btn-primary:focus {
-    background: #ffffff;
-    color: #172C49;
-    border-color: #172C49;
+    /*background: #ffffff;*/
+    /*color: #172C49;*/
+    /*border-color: #172C49;*/
 }
 
 .btn-secondary {
-    background: #3BA935;
-    border-color: #3BA935;
+    /*background: #3BA935;*/
+    /*border-color: #3BA935;*/
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle {
@@ -138,9 +138,9 @@ body {
 }
 
 .btn-secondary:hover, .btn-secondary:focus {
-    background: #ffffff;
-    color: #3BA935;
-    border-color: #3BA935;
+    /*background: #ffffff;*/
+    /*color: #3BA935;*/
+    /*border-color: #3BA935;*/
 }
 
 .eventListing {
@@ -171,31 +171,31 @@ body {
 }
 
 .customTabs {
-    border-bottom: 2px solid #8997B2;
+    /*border-bottom: 2px solid #8997B2;*/
 }
 
 .customTabs .nav-link {
-    font: normal normal bold 16px/18px Open Sans;
-    letter-spacing: 0;
-    color: #454F63;
-    opacity: 0.2;
-    border-radius: 0;
-    border-width: 0 0 3px 0;
-    border-style: solid;
-    border-color: transparent transparent transparent transparent;
+    /*font: normal normal bold 16px/18px Open Sans;*/
+    /*letter-spacing: 0;*/
+    /*color: #454F63;*/
+    /*opacity: 0.2;*/
+    /*border-radius: 0;*/
+    /*border-width: 0 0 3px 0;*/
+    /*border-style: solid;*/
+    /*border-color: transparent transparent transparent transparent;*/
 }
 
 .customTabs .nav-item.show .nav-link, .customTabs .nav-link.active {
-    color: #454F63;
-    opacity: 1;
-    background-color: #fff;
-    border-color: transparent transparent #3BA935 transparent;
+    /*color: #454F63;*/
+    /*opacity: 1;*/
+    /*background-color: #fff;*/
+    /*border-color: transparent transparent #3BA935 transparent;*/
 }
 
 .customTabs--action .nav-link {
-    font: normal normal bold 19px/26px Open Sans;
-    letter-spacing: 0;
-    color: #172C49;
+    /*font: normal normal bold 19px/26px Open Sans;*/
+    /*letter-spacing: 0;*/
+    /*color: #172C49;*/
 }
 
 .customTabs--action .nav-link:not(:last-child) {

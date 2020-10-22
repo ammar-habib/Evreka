@@ -1,5 +1,6 @@
 import React, {Component, useCallback} from 'react';
 import {Button, Modal, Tab, Tabs, Form} from "react-bootstrap";
+import {Heading3, Btn, MyTabs} from '../../style.js';
 import ActionTaken from "../action-taken/action.taken";
 
 const actionListing = [
@@ -111,8 +112,8 @@ class TakeAction extends React.Component {
                         ) : ''}
                         {!this.state.errorState && !this.state.successState ? (
                             <Modal.Body>
-                                <Tabs activeKey={this.state.activeTab} onSelect={this.handleSelect} id="action-tab"
-                                      className="customTabs customTabs--action mb-4 justify-content-center">
+                                <MyTabs actionTabs activeKey={this.state.activeTab} onSelect={this.handleSelect} id="action-tab"
+                                      className="mb-4 justify-content-center">
                                     <Tab eventKey={1} title="1 SELECT ACTION">
 
                                         <div className="actionListing">
@@ -158,7 +159,7 @@ class TakeAction extends React.Component {
                                             </li>
                                         </ul>
                                     </Tab>
-                                </Tabs>
+                                </MyTabs>
                             </Modal.Body>
                         ) : ''}
                     </Modal>

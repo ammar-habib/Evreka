@@ -1,10 +1,13 @@
-import styled from 'styled-components/macro'
+import styled, {css} from 'styled-components'
+import {Button, Tabs} from "react-bootstrap";
+
 
 const colorPrimary = '#172C49';
 const colorPrimary2 = '#535A72';
 const colorPrimary3 = '#3BA935';
 const colorPrimary4 = '#E9CF30';
 const colorPrimary5 = '#EBECEF';
+const colorPrimary6 = '#454F63';
 
 
 export const PageWrapper = styled.div`
@@ -25,8 +28,8 @@ export const PageContent = styled.div`
 
 export const Heading3 = styled.h3`
      font-size: 23px;
-    font-weight: 700;
-    color: ${colorPrimary};
+     font-weight: 700;
+     color: ${colorPrimary};
 `;
 
 export const EventListing = styled.div`
@@ -38,12 +41,11 @@ export const EventListing = styled.div`
         overflow-y: auto;
         overflow-x: hidden;
         margin-bottom: 15px;
-}
-@media (max-width: 575px) {
+    }
+    @media (max-width: 575px) {
         max-height: 250px;
-}    
+    }    
 `;
-
 export const EventList = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -72,17 +74,73 @@ export const EventListText = styled.div`
     }
 `;
 
-export const Button = styled.button`
+export const Btn = styled(Button)`
     text-align: center;
     font: normal normal bold 16px/22px Open Sans;
     letter-spacing: 0;
-    color: #FFFFFF;
+    color: ${colorPrimary};
     text-transform: uppercase;
     border-radius: 4px;
     box-shadow: 0 3px 6px #00000029;
     min-width: 124px;
-    background: ${props => props.variant = "primary" ? "#172C49" : "#ffffff"};
+    background: transparent; 
+    border: 1px solid ${colorPrimary};
+    ${props => props.variant === 'primary' && css`
+     background: ${colorPrimary}; 
+     border: 1px solid ${colorPrimary};
+     color: #ffffff;`}
+    
+     ${props => props.variant === 'secondary' && css`
+     background: ${colorPrimary3}; 
+     border: 1px solid ${colorPrimary3};
+     color: #ffffff;`}
+     
+    &:hover, &:focus{
+     background: ${colorPrimary}; 
+     border: 1px solid ${colorPrimary};
+     color: #ffffff;
+     
+    ${props => props.variant === 'primary' && css`
+     background: #ffffff; 
+     border: 1px solid ${colorPrimary};
+     color: ${colorPrimary}`}
+
+     ${props => props.variant === 'secondary' && css`
+     background: #ffffff;; 
+     border: 1px solid ${colorPrimary3};
+     color: ${colorPrimary3}`}
+    }
     // @media (max-width: 575px) {
     // margin-bottom: 8px;
     //}
 `;
+
+export const MyTabs = styled(Tabs)`
+    border-bottom: 2px solid ${colorPrimary6};
+    & > .nav-link {
+    font: normal normal bold ${props => props.actionTabs ? " 19px/26px " : "16px/18px"} Open Sans;
+    letter-spacing: 0;
+    color: ${colorPrimary6};
+    opacity: 0.2;
+    border-radius: 0;
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: transparent transparent transparent transparent;
+     ${props => props.actionTabs && css`
+      &:not(:last-child){
+       margin-right: 2.5rem;}`
+}
+    &.active {
+    color: ${colorPrimary6};
+    opacity: 1;
+    background-color: #fff;
+    border-color: transparent transparent ${colorPrimary3} transparent;}
+    }
+    & > .nav-item.show{
+       .nav-link{
+        color: ${colorPrimary6};
+        opacity: 1;
+       background-color: #fff;
+        border-color: transparent transparent ${colorPrimary3} transparent;}
+    }
+`
