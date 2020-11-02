@@ -2,6 +2,7 @@ import React, {Component, useCallback} from 'react';
 import {Button, Modal, Tab, Tabs, Form} from "react-bootstrap";
 import {Heading3, Btn, MyTabs} from '../../style.js';
 import ActionTaken from "../action-taken/action.taken";
+import {ActionList, ActionListing} from "../../style";
 
 const actionListing = [
     {id: 1, title: 'Mark As Resolved', content: 'Mark this event as resolved and enter the details of the resolution.'},
@@ -116,22 +117,23 @@ class TakeAction extends React.Component {
                                       className="mb-4 justify-content-center">
                                     <Tab eventKey={1} title="1 SELECT ACTION">
 
-                                        <div className="actionListing">
+                                        <ActionListing>
                                             {actionListing.map((list, i) => {
                                                 return (
-                                                    <div key={i}
+                                                    <ActionList key={i}
                                                          className={"actionList" + (list.id == this.state.activeList.id ? ' selected ' : ' ')}
                                                          onClick={() => this.activeList(list.id)}>
                                                         <p className="actionList__title"><b>{list.title}</b></p>
                                                         <p className="actionList__text">{list.content}</p>
-                                                    </div>
+                                                    </ActionList>
                                                 )
                                             })}
-                                        </div>
+                                        </ActionListing>
+
                                         <div className="text-center">
-                                            <Button className="customBtn" variant="secondary"
+                                            <Btn variant="secondary"
                                                     onClick={() => this.handleSelect(2)}
-                                                    disabled={this.state.activeBtn == false}>Next</Button>
+                                                    disabled={this.state.activeBtn == false}>Next</Btn>
                                         </div>
                                     </Tab>
                                     <Tab eventKey={2} title="2 TAKE ACTION" disabled={this.state.activeBtn == false}>
@@ -150,12 +152,12 @@ class TakeAction extends React.Component {
                                             <small>{this.state.resolutionDetail.length}/300</small></p>
                                         <ul className="list-inline text-center mb-0">
                                             <li className="list-inline-item mb-1">
-                                                <Button className="customBtn" variant="primary"
-                                                        onClick={() => this.handleSelect(1)}>Back</Button>
+                                                <Btn  variant="primary"
+                                                        onClick={() => this.handleSelect(1)}>Back</Btn>
                                             </li>
                                             <li className="list-inline-item mb-1">
-                                                <Button className="customBtn" variant="secondary"
-                                                        onClick={() => this.takeAction()}>Take Action</Button>
+                                                <Btn className="customBtn" variant="secondary"
+                                                        onClick={() => this.takeAction()}>Take Action</Btn>
                                             </li>
                                         </ul>
                                     </Tab>

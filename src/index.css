@@ -203,18 +203,18 @@ body {
 }
 
 .actionListing {
-    margin-bottom: 30px;
-    cursor: pointer;
+    /*margin-bottom: 30px;*/
+    /*cursor: pointer;*/
 }
 
 .actionList {
-    background: #F4F4F4;
-    box-shadow: 0 3px 6px #00000029;
-    padding: 12.5px 20px;
+    /*background: #F4F4F4;*/
+    /*box-shadow: 0 3px 6px #00000029;*/
+    /*padding: 12.5px 20px;*/
 }
 
 .actionList:not(:last-child) {
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
 }
 
 .actionList p {

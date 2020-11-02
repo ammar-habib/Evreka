@@ -1,15 +1,19 @@
 {
+  "env": {
+    "development": {
+      "plugins": [
+        ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ]
+      ],
+      "presets": ["react-app"]
+    },
+    "production": {
+      "plugins": [
+        ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ]
+      ],
+      "presets": ["react-app"]
+    }
+  },
   "plugins": [
-    [
-      "babel-plugin-styled-components",
-      {
-        "ssr": false,
-        "displayName": true,
-        "fileName": true,
-        "minify": true,
-        "transpileTemplateLiterals": true,
-        "pure": true
-      }
-    ]
+    ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ]
   ]
 }

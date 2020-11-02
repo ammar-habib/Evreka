@@ -1,8 +1,8 @@
-import styled, {css} from 'styled-components'
+import styled, {css} from 'styled-components/macro'
 import {Button, Tabs} from "react-bootstrap";
 
 
-const colorPrimary = '#172C49';
+const colorPrimary = '#172c49';
 const colorPrimary2 = '#535A72';
 const colorPrimary3 = '#3BA935';
 const colorPrimary4 = '#E9CF30';
@@ -98,8 +98,7 @@ export const Btn = styled(Button)`
     &:hover, &:focus{
      background: ${colorPrimary}; 
      border: 1px solid ${colorPrimary};
-     color: #ffffff;
-     
+     color: #ffffff;     
     ${props => props.variant === 'primary' && css`
      background: #ffffff; 
      border: 1px solid ${colorPrimary};
@@ -140,7 +139,30 @@ export const MyTabs = styled(Tabs)`
        .nav-link{
         color: ${colorPrimary6};
         opacity: 1;
-       background-color: #fff;
+         background-color: #fff;
         border-color: transparent transparent ${colorPrimary3} transparent;}
     }
 `
+
+export const ActionListing = styled.div`
+    margin-bottom: 30px;
+    cursor: pointer;
+`;
+
+export const ActionList = styled.div`
+    background: #F4F4F4;
+    box-shadow: 0 3px 6px #00000029;
+    padding: 12.5px 20px;
+    &:not(:last-child){
+     margin-bottom: 15px;
+    }
+    & > p {
+     margin-bottom: 4px;
+    }
+`;
+
+// export const EventListText = styled.div`
+//      @media (max-width: 575px) {
+//      margin-bottom: 8px;
+//     }
+// `;
