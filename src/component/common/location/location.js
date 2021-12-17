@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 
@@ -15,25 +15,10 @@ const iconPerson = new L.Icon({
     className: 'leaflet-div-icon'
 });
 
-class Location extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            lat: this.props.lat,
-            lng: this.props.lng,
-            zoom: 13
-        }
-
-    }
-    componentDidUpdate() {
-        if(this.state.lat !== this.props.lat && this.state.lng !== this.props.lng) {
-            this.setState({lat: this.props.lat,lng: this.props.lng});
-        }
-    }
-    render() {
-        const position = [this.state.lat, this.state.lng];
+const Location =({locationDetail})=> {
+        const position = [locationDetail.latitude, locationDetail.longitude];
         return (
-            <Map style={{width:'100%', height:'400px'}} center={position} zoom={this.state.zoom}>
+            <Map style={{width:'100%', height:'400px'}} center={position} zoom={13}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
@@ -45,7 +30,6 @@ class Location extends Component {
                 </Marker>
             </Map>
         );
-    }
 }
 
 export default Location;

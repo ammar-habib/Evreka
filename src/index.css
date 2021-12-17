@@ -251,6 +251,8 @@ body {
     box-shadow: 0 2px 6px #0000000F;
     border-radius: 12px;
     background-color: #ffffff;
+    border: none;
+    min-height: 250px;
 }
 
 .common-modal .modal-header {
@@ -267,7 +269,19 @@ body {
     font-weight: bold;
     font-size: 30px;
 }
+.alertModal .close{
+    padding: 4px 0 16px;
+}
+.alertModal .modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.alertModal .close{
+    padding: 4px 0 16px;
+}
 .imgDiv {
     position: relative;
     overflow: hidden;
@@ -296,6 +310,37 @@ body {
     width: 40px !important;
     height: 30px;
 }
+.textareaWrapper {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 15px 15px 10px;
+}
+.textareaWrapper textarea{
+    border: none;
+    resize: none;
+    padding: 0;
+    min-height: 125px;
+}
+.textareaWrapper textarea:focus{
+  box-shadow: none;
+    outline: none;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3DA836;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 @media (min-width: 1920px) {
     .container {
         /*max-width: 1890px;*/

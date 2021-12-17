@@ -5,21 +5,54 @@ import './App.css';
 import TakeAction from "./component/take-action/take-action";
 import Location from "./component/common/location/location";
 import EventList from "./component/common/event-list/event-list";
+import Details from "./component/common/details/event-list";
+import EventMedia from "./component/common/media/event-media";
+import {cloneDeep} from 'lodash'
 
 function App() {
     const [events, setEvents] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState();
+    const [openActionModal, setOpenActionModal] = useState(false);
+
+    console.log("openActionModal", openActionModal)
+    console.log("selectedEvent", selectedEvent)
+
     useEffect(() => {
         getALLEvents()
     }, [])
 
+
     const getALLEvents = () => {
         axios.get("./data.json").then((response) => {
             const allEvents = response.data;
-            setEvents(allEvents);
-            console.log("events", allEvents)
+            setEvents(allEvents.data);
+
         })
             .catch(error => console.error(`Error: ${error}`));
     }
+    const noActionNeeded = (id) => {
+        const _selectedEvent = cloneDeep(events)
+        console.log("_selectedEvent", events)
+
+        console.log("_selectedEvent id", id)
+
+        _selectedEvent.forEach(event => {
+            if (event.id == id) {
+                event.details.forEach((eventItem) => {
+                        eventItem.title === "Aksiyon" &&
+                        (eventItem.value = "No Action Need")
+                    }
+                )
+                setEvents(_selectedEvent)
+            }
+        })
+
+    }
+
+    const taKeAction = (id) => {
+        setOpenActionModal(true)
+    }
+
     return (
         <div className="page-wrapper">
             <Container>
@@ -27,99 +60,64 @@ function App() {
                     <Form.Row className="">
                         <Col xl="8">
                             <h3 className="heading3 text-uppercase">Events</h3>
-                            {events.length > 0 &&  events?.map((event, index) => (
-                                <div className="user">1</div>
-                            ))}
-                            {/*<div className="eventListing">*/}
-                            {/*    <div className="eventListing__list">*/}
-                            {/*        <div className="eventListing__text">*/}
-                            {/*            <div><b>Tarih</b></div>*/}
-                            {/*            <div>*/}
-                            {/*                <div>detail.value</div>*/}
-                            {/*            </div>*/}
-                            {/*        </div>*/}
-                            {/*        <div className="eventListing__text">*/}
-                            {/*            <div><b>Tip</b></div>*/}
-                            {/*            <div>*/}
-                            {/*                <div>detail.value</div>*/}
-                            {/*            </div>*/}
-
-                            {/*        </div>*/}
-                            {/*        <div className="eventListing__text">*/}
-                            {/*            <div><b>Event ID</b></div>*/}
-                            {/*            <div><u>items.id</u></div>*/}
-                            {/*        </div>*/}
-                            {/*        <div className="eventListing__text">*/}
-                            {/*            <div><b>Araç</b></div>*/}
-                            {/*            <div>*/}
-                            {/*                <div>detail.value</div>*/}
-                            {/*            </div>*/}
-                            {/*        </div>*/}
-                            {/*        <div className="eventListing__text">*/}
-                            {/*            <div><b>Aksiyon</b></div>*/}
-                            {/*            <div>*/}
-                            {/*                <div>detail.value</div>*/}
-                            {/*            </div>*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
+                            <div className="eventListing">
+                                {events.length > 0 && events?.map((event, index) => (
+                                    <EventList key={index} data={event} selectedEventData={selectedEvent} setSelectedEvent={setSelectedEvent}/>
+                                ))}
+                            </div>
                         </Col>
                         <Col xl="4">
                             <h3 className="heading3 text-uppercase">Event details</h3>
                             <div className="p-2 bg-white">
-                                <Form.Row>
-                                    <Col sm="6" className="mb-3">
-                                        <Button className="customBtn" variant="primary" block>no action
-                                            needed</Button>
-                                    </Col>
-                                    <Col sm="6" className="mb-3">
-                                        <Button className="customBtn" variant="secondary" block>take action</Button>
-                                    </Col>
-                                </Form.Row>
-
-
+                                {!!selectedEvent && (
+                                    <Form.Row>
+                                        <Col sm="6" className="mb-3">
+                                            <Button className="customBtn" variant="primary" block onClick={() => noActionNeeded(selectedEvent.id)}>no
+                                                action
+                                                needed</Button>
+                                        </Col>
+                                        <Col sm="6" className="mb-3">
+                                            <Button className="customBtn" variant="secondary" block onClick={() => taKeAction(selectedEvent.id)}>take
+                                                action</Button>
+                                        </Col>
+                                    </Form.Row>
+                                )}
                                 <Tabs defaultActiveKey="details" id="details-tab" className="customTabs mb-3">
                                     <Tab eventKey="details" title="DETAILS">
-                                        <Row className="m-0">
-                                            <Col xl="6" className="mb-3">
-                                                <div><b>item.title</b></div>
-                                                <div>item.value</div>
-                                            </Col>
-                                            <Alert className="w-100" variant="info">No Detail is
-                                                available </Alert>
-                                        </Row>
+                                        {!!selectedEvent ? (
+                                            <Details details={selectedEvent.details}/>
+                                        ) : (
+                                            <Alert className="w-100" variant="info">Please selected any row</Alert>
+                                        )
+                                        }
                                     </Tab>
                                     <Tab eventKey="location" title="LOCATION">
-                                        <Location
-                                            lat="0"
-                                            lng="0"
-                                        />
-                                        <Alert variant="info">No Location is Available</Alert>
+                                        {!!selectedEvent ? (
+                                            <Location locationDetail={selectedEvent.location}/>
+                                        ) : (
+                                            <Alert className="w-100" variant="info">Please selected any row</Alert>
+                                        )
+                                        }
 
                                     </Tab>
                                     <Tab eventKey="media" title="MEDIA">
-
-                                        <Alert variant="info">No Media Available</Alert>
-
-                                        <div className="imgDiv mediaImg">
-                                            <img src="item.url" className="img-fluid imgDiv__img"/>
-                                        </div>
-
-                                        <div className="text-center">
-                                            <audio controls>
-                                                <source src="item.url"/>
-                                                Your browser does not support the audio element.
-                                            </audio>
-                                        </div>
-                                        <Alert variant="info">No Media is Available</Alert>
+                                        {!!selectedEvent ? (
+                                            <EventMedia mediaDetail={selectedEvent.media}/>
+                                        ) : (
+                                            <Alert className="w-100" variant="info">Please selected any row</Alert>
+                                        )
+                                        }
                                     </Tab>
                                 </Tabs>
                             </div>
-                            <Alert className="w-100" variant="info">Please Selected any Row</Alert>
-
                         </Col>
                     </Form.Row>
                 </div>
+                {openActionModal &&
+                <TakeAction show={openActionModal}
+                            setOpenActionModal = {setOpenActionModal}
+                />
+                }
             </Container>
         </div>
     );

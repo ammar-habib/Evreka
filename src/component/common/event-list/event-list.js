@@ -1,28 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const EventList = (props) => {
+const EventList = ({data, selectedEventData, setSelectedEvent}) => {
+    const [checkEventAction, setCheckEventAction] = useState();
+    // console.log("checkEventAction", checkEventAction)
+    const selectedEvent = (id) => {
+        if (data.id == id) {
+            setSelectedEvent(data);
+        }
+    }
+    const checkEventHasAction = () => {
+        let eventsWithOnAction
+        data.details.map((eventItem) => (
+                eventItem.title === "Aksiyon" && (eventItem.value === "" || eventItem.value === "-") ? (
+                    eventsWithOnAction = data
+                ) : ''
+            )
+        )
+        setCheckEventAction(eventsWithOnAction)
+    }
+
+    useEffect(() => {
+        if (data) {
+            checkEventHasAction()
+        }
+    }, [data])
+
     return (
-        <div className="eventListing__list">
-            <div className="eventListing__text">
-                <div><b>Date</b></div>
-                <div></div>
-            </div>
-            <div className="eventListing__text">
-                <div><b>Type</b></div>
-                <div>Sudden Temperate increase</div>
-            </div>
-            <div className="eventListing__text">
-                <div><b>Bin ID</b></div>
-                <div><u>8720</u></div>
-            </div>
-            <div className="eventListing__text">
-                <div><b>Temperature</b></div>
-                <div>80c</div>
-            </div>
-            <div className="eventListing__text">
-                <div><b>Action</b></div>
-                <div>Mark As Resolved</div>
-            </div>
+        <div className={`eventListing__list ${data.id == selectedEventData?.id ? 'selected' : ''} ${checkEventAction ? 'action' : ''}`} onClick={() => selectedEvent(data.id)}>
+            {data.details.length > 0 && data.details?.map((item, index) => (
+                item.title === "Tarih" || item.title === "Tip" || item.title === "Rota İsmi" || item.title === "Kategori" || item.title === "Aksiyon" ? (
+                    <div key={index} className="eventListing__text">
+                        <div><b>{item.title}</b></div>
+                        <div>{item.value}</div>
+                    </div>
+                ) : ''
+            ))}
         </div>
     );
 }
