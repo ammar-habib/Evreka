@@ -4,13 +4,10 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="">
+    <list default="true" id="384f2abc-f6de-47c7-bd6a-f4ea50889962" name="Default Changelist" comment="working on style component.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/take-action/take-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/take-action/take-action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,27 +17,24 @@
     <option name="done" value="true" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="JavaScript File" />
         <option value="tsconfig.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -48,57 +42,77 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1i0KgcNsUvUnPfp52yazXi8ciik" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1600972961183" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/component/common/location" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\evreka\src\assets\img" />
+      <recent name="D:\project\evreka\src\component\common" />
+      <recent name="D:\project\evreka\src" />
       <recent name="D:\project\evreka\src\component\common\location" />
       <recent name="D:\xampp\htdocs\evreka\src\component" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\evreka\public" />
       <recent name="D:\project\evreka\src" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="RunManager">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <item itemvalue="npm.build" />
       </list>
-    </option>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\TechMateTech\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -111,6 +125,48 @@
       <workItem from="1600824035422" duration="4862000" />
       <workItem from="1600968680618" duration="4245000" />
       <workItem from="1601039182611" duration="133000" />
+      <workItem from="1601877177627" duration="726000" />
+      <workItem from="1601877943015" duration="469000" />
+      <workItem from="1601879902726" duration="14362000" />
+      <workItem from="1601963038359" duration="1172000" />
+      <workItem from="1602070926924" duration="5001000" />
+      <workItem from="1602140558382" duration="2261000" />
+      <workItem from="1602767360639" duration="1819000" />
+      <workItem from="1603115583444" duration="5378000" />
+      <workItem from="1603183280484" duration="6258000" />
+      <workItem from="1603194793777" duration="10994000" />
+      <workItem from="1603268101682" duration="17378000" />
+      <workItem from="1603359038212" duration="12106000" />
+      <workItem from="1603444929316" duration="120000" />
+      <workItem from="1603449920036" duration="1028000" />
+      <workItem from="1603450974089" duration="7528000" />
+      <workItem from="1603792053637" duration="1241000" />
+      <workItem from="1603795436600" duration="3756000" />
+      <workItem from="1604326893304" duration="670000" />
+      <workItem from="1605526967280" duration="608000" />
+      <workItem from="1606130183242" duration="1854000" />
+      <workItem from="1606216221697" duration="605000" />
+      <workItem from="1613484999987" duration="1111000" />
+      <workItem from="1613489524858" duration="384000" />
+      <workItem from="1627554965992" duration="237000" />
+      <workItem from="1627555813075" duration="664000" />
+      <workItem from="1638544061460" duration="912000" />
+      <workItem from="1638562046338" duration="16000" />
+      <workItem from="1638713155691" duration="448000" />
+      <workItem from="1638793392003" duration="922000" />
+      <workItem from="1638965282083" duration="11735000" />
+      <workItem from="1639038513321" duration="8758000" />
+      <workItem from="1639133099604" duration="15756000" />
+      <workItem from="1639226127623" duration="6324000" />
+      <workItem from="1639252192070" duration="1567000" />
+      <workItem from="1639317387651" duration="605000" />
+      <workItem from="1639389325795" duration="17908000" />
+      <workItem from="1639581792163" duration="1420000" />
+      <workItem from="1639649827319" duration="639000" />
+      <workItem from="1639740108606" duration="13946000" />
+      <workItem from="1639757219292" duration="125000" />
+      <workItem from="1639771108145" duration="3345000" />
+      <workItem from="1640000543713" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="event listing and event detail page.">
       <created>1600802212858</created>
@@ -154,24 +210,100 @@
       <option name="project" value="LOCAL" />
       <updated>1601378774263</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="working on action modal">
+      <created>1601461200933</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601461200933</updated>
+    </task>
+    <task id="LOCAL-00008" summary="working on action modal">
+      <created>1601470326579</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601470326579</updated>
+    </task>
+    <task id="LOCAL-00009" summary="working on action.">
+      <created>1601903106744</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601903106744</updated>
+    </task>
+    <task id="LOCAL-00010" summary="working on textarea.">
+      <created>1602076286275</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1602076286275</updated>
+    </task>
+    <task id="LOCAL-00011" summary="working on textarea.">
+      <created>1602165397869</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602165397869</updated>
+    </task>
+    <task id="LOCAL-00012" summary="working on action modal.">
+      <created>1603122900047</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603122900047</updated>
+    </task>
+    <task id="LOCAL-00013" summary="working on style component.">
+      <created>1603210791622</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603210791622</updated>
+    </task>
+    <task id="LOCAL-00014" summary="working on style component.">
+      <created>1603383848104</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1603383848104</updated>
+    </task>
+    <task id="LOCAL-00015" summary="working on style component.">
+      <created>1604334041886</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604334041886</updated>
+    </task>
+    <task id="LOCAL-00016" summary="developed with hooks.">
+      <created>1638979531062</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638979531062</updated>
+    </task>
+    <task id="LOCAL-00017" summary="working on hook.">
+      <created>1639757284905</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1639757284905</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -180,7 +312,55 @@
     <MESSAGE value="transfer date into external file." />
     <MESSAGE value="location update." />
     <MESSAGE value="update right side yellow bar." />
-    <option name="LAST_COMMIT_MESSAGE" value="update right side yellow bar." />
+    <MESSAGE value="working on action modal" />
+    <MESSAGE value="working on action." />
+    <MESSAGE value="working on textarea." />
+    <MESSAGE value="working on action modal." />
+    <MESSAGE value="working on style component." />
+    <MESSAGE value="developed with hooks." />
+    <MESSAGE value="working on hook." />
+    <option name="LAST_COMMIT_MESSAGE" value="working on hook." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2505" y="148" key="CommitChangelistDialog2" timestamp="1639757283592">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2505" y="148" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1160@1920.0.1920.1160" timestamp="1639757283592" />
+    <state x="2258" y="232" key="MergeDialog" timestamp="1638965662258">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2258" y="232" key="MergeDialog/0.0.1536.824/1920.0.1920.1160@1920.0.1920.1160" timestamp="1638965662258" />
+    <state x="2472" y="313" key="Vcs.Push.Dialog.v2" timestamp="1639757287703">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2472" y="313" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1160@1920.0.1920.1160" timestamp="1639757287703" />
+    <state x="2659" y="293" key="git4idea.branch.GitSmartOperationDialog" timestamp="1638965607473">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2659" y="293" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824/1920.0.1920.1160@1920.0.1920.1160" timestamp="1638965607473" />
+    <state x="2680" y="481" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1638965755832">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2680" y="481" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824/1920.0.1920.1160@1920.0.1920.1160" timestamp="1638965755832" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1639400204964">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1536.824/1920.0.1920.1160@1920.0.1920.1160" timestamp="1639400204964" />
+    <state x="2536" y="270" key="run.anything.popup" timestamp="1639065999566">
+      <screen x="1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="2536" y="270" key="run.anything.popup/0.0.1536.824/1920.0.1920.1160@1920.0.1920.1160" timestamp="1639065999566" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/index.js</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

@@ -9,7 +9,8 @@ import Details from "./component/common/details/event-list";
 import EventMedia from "./component/common/media/event-media";
 import {cloneDeep} from 'lodash'
 
-function App() {
+function App({getActionActiveList}) {
+    console.log("etActionActiveList", getActionActiveList)
     const [events, setEvents] = useState([]);
     const [selectedEvent, setSelectedEvent] = useState();
     const [openActionModal, setOpenActionModal] = useState(false);
@@ -32,10 +33,6 @@ function App() {
     }
     const noActionNeeded = (id) => {
         const _selectedEvent = cloneDeep(events)
-        console.log("_selectedEvent", events)
-
-        console.log("_selectedEvent id", id)
-
         _selectedEvent.forEach(event => {
             if (event.id == id) {
                 event.details.forEach((eventItem) => {
@@ -51,6 +48,17 @@ function App() {
 
     const taKeAction = (id) => {
         setOpenActionModal(true)
+        const _selectedEvent = cloneDeep(events)
+        _selectedEvent.forEach(event => {
+            if (event.id == id) {
+                event.details.forEach((eventItem) => {
+                        eventItem.title === "Aksiyon" &&
+                        (eventItem.value = '')
+                    }
+                )
+                setEvents(_selectedEvent)
+            }
+        })
     }
 
     return (
@@ -116,6 +124,7 @@ function App() {
                 {openActionModal &&
                 <TakeAction show={openActionModal}
                             setOpenActionModal = {setOpenActionModal}
+                            getActionActiveList={activeList}
                 />
                 }
             </Container>
